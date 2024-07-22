@@ -37,22 +37,15 @@ function LeaderBoard({
   };
   return (
     <>
-      <div
-        className="leaderboard p-rel m-auto"
-        style={
-          // eventGifting
-          { backgroundImage: `url(${bg1})`, backgroundSize: "100% 100%", paddingBottom: "25vw" }
-          // : { backgroundImage: `url(${bg2})`, backgroundSize: "100% 100%", paddingBottom: "40vw" }
-        }
-      >
+      <div className="leaderboard p-rel m-auto" style={eventGifting ? { width: "95%", marginTop: "10vw" } : { width: "98%", marginTop: "20vw" }}>
         <div className="leaderboard-title m-auto p-abs d-flex al-center jc-center c-white f-chewy">
-          <img src={title} alt="" />
+          {eventGifting ? <div className="gifting-head">Leaderboard</div> : <img src={title} alt="" />}
         </div>
         {isLoading ? (
           <Loader />
         ) : (
           <>
-            {tab3 ? (
+            {tab2 || tab3 ? (
               <>
                 <div className="rank-section">
                   {arrayData?.count === 0 ? (
@@ -76,7 +69,7 @@ function LeaderBoard({
                                 listNumber={index + 1}
                                 userLevel={userLevel}
                                 actorLevel={actorLevel}
-                                tab1={tab1}
+                                tab2={tab2}
                                 tab3={tab3}
                                 desc={desc}
                               />
@@ -109,7 +102,7 @@ function LeaderBoard({
                                 userLevel={userLevel}
                                 actorLevel={actorLevel}
                                 beansPot={beansPot}
-                                tab2={tab2}
+                                tab1={tab1}
                                 subTabs={subTabs}
                                 eventGifting={eventGifting}
                               />
@@ -135,7 +128,6 @@ function LeaderBoard({
                                 userLevel={userLevel}
                                 actorLevel={actorLevel}
                                 tab1={tab1}
-                                tab2={tab2}
                                 subTabs={subTabs}
                                 eventGifting={eventGifting}
                               />

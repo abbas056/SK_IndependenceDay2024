@@ -9,9 +9,8 @@ import { slicePlease } from "../../js/helpers";
 import title from "../../assets/Leaderboard-title.png";
 
 function BattleField({ tab1 }) {
-  const { userInfo, todayWinners, previousWinners } = useContext(ApiContext);
+  const { tickertape } = useContext(ApiContext);
 
-  const tab1Tickertape = [];
   const [subTabs, setSubTabs] = useState({
     Today: true,
     Previous: false,
@@ -19,10 +18,10 @@ function BattleField({ tab1 }) {
 
   let winners;
   if (subTabs.Today) {
-    winners = todayWinners;
+    winners = tickertape;
     // beansPot = userInfo?.beansPotInfo?.[todayKey];
   } else {
-    winners = previousWinners;
+    winners = tickertape;
     // beansPot = userInfo?.beansPotInfo?.[prevKey];
   }
 
@@ -30,7 +29,7 @@ function BattleField({ tab1 }) {
   const restWinners = slicePlease(winners?.list, 3, winners?.list?.length);
   return (
     <div>
-      <MyPoints icon={pontsIcon} text="My Jashan Point: " />
+      <MyPoints icon={pontsIcon} text="My Jashan Points: " points={1} />
       <WarGame />
       <Tab1Rewards />
       <LeaderBoard
@@ -38,7 +37,7 @@ function BattleField({ tab1 }) {
         topWinners={topWinners}
         restWinners={restWinners}
         arrayData={winners}
-        maxheight={"159vw"}
+        maxheight={"187vw"}
         title={title}
         subTabs={subTabs}
         setSubTabs={setSubTabs}

@@ -3,7 +3,7 @@ import React from "react";
 // import seeLess from "../../assets/See-Less-Button.png";
 function SeeButton({ active, handleChangeActive, eventGifting }) {
   return (
-    <div className="see-buttons " style={eventGifting ? { bottom: "8vw" } : { bottom: "24vw" }}>
+    <div className="see-buttons " style={eventGifting ? { bottom: "8vw" } : { bottom: "6vw" }}>
       {active ? (
         <button className="m-auto" onClick={handleChangeActive}>
           See More

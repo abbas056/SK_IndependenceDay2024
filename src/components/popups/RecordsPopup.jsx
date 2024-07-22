@@ -8,15 +8,13 @@ function RecordsPopup({ mainTabs, close, loadMore, isLoading, gameRecord }) {
     <div className="p-rel w-100 d-flex al-start jc-center" style={{ height: "100%" }}>
       <div className="records-popup p-rel">
         <div className="inner-content p-rel">
-          <div className="title f-sweet m-auto d-flex al-center jc-center p-abs">Records</div>
-          <div className="table m-auto d-flex jc-center al-start f-acme fd-column">
+          <div className="title f-hunter  m-auto d-flex al-center jc-center p-abs">Records</div>
+          <div className="table m-auto d-flex jc-center al-start f-tangoItalic fd-column">
             <div className="heading d-flex f-bold">
               <div className="border-1 d-flex  al-center jc-center" style={mainTabs.tab1 || mainTabs.tab2 ? { width: "30%" } : { width: "40%" }}>
                 Time (GMT)
               </div>
-              {mainTabs.mainTabs.tab1 || mainTabs.mainTabs.tab2 ? (
-                <div className="w-30 border-1 d-flex  al-center jc-center">{mainTabs.tab1 ? "Toss Result" : "Coins Earned"}</div>
-              ) : null}
+              {mainTabs.tab1 ? <div className="w-30 border-1 d-flex  al-center jc-center">Battle Results</div> : null}
               <div className="w-60 border-1 d-flex  al-center jc-center">Rewards</div>
             </div>
             {isLoading ? (
@@ -24,7 +22,7 @@ function RecordsPopup({ mainTabs, close, loadMore, isLoading, gameRecord }) {
             ) : (
               <div className={gameRecord?.data?.count === 0 ? "table-data d-flex al-center jc-center" : "table-data d-flex al-start jc-center"}>
                 {gameRecord?.data?.count === 0 ? (
-                  <p className="no-data f-acme w-100">No Records Found</p>
+                  <p className="no-data f-tangoItalic w-100">No Records Found</p>
                 ) : (
                   <div className="content d-flex fd-column">
                     {rewardsList?.map((array, index) => {
@@ -42,7 +40,7 @@ function RecordsPopup({ mainTabs, close, loadMore, isLoading, gameRecord }) {
                           >
                             {formattedDate}
                           </div>
-                          {mainTabs.tab1 || mainTabs.tab2 ? (
+                          {mainTabs.tab1 ? (
                             <div className="w-30 bg-sky-blue border-1 d-flex  al-center jc-center" style={{ whiteSpace: "pre-line" }}>
                               {mainTabs.tab1
                                 ? `${
@@ -98,7 +96,7 @@ function RecordsPopup({ mainTabs, close, loadMore, isLoading, gameRecord }) {
             <>
               {gameRecord?.data?.list?.length >= 10 ? (
                 <div className="see-btn" onClick={loadMore}>
-                  <button className="see-more f-acme">See More</button>
+                  <button className="see-more f-tangoItalic">See More</button>
                 </div>
               ) : null}
             </>

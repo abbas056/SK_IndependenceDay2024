@@ -4,9 +4,9 @@ import { rewardImages } from "../../js/helpers";
 const SliderItem = ({ item }) => {
   return (
     <div className="slider-item d-flex fd-column al-center jc-center gap-1" style={{ width: "10vw" }}>
-      <img style={{ width: "5vw", height: "5vw" }} src={rewardImages(item.desc)} />
+      <img style={{ width: "6vw", height: "6vw" }} src={rewardImages(item.desc)} />
       {
-        <span className="desc" style={{ fontSize: "1.8vw", fontWeight: "700", color: "white", textAlign: "center" }}>
+        <span className="desc" style={{ fontSize: "2vw", fontWeight: "700", color: "#164d1c", textAlign: "center" }}>
           x
           {item.desc === "Coins" || item.desc === "Beans" || item.desc === "Gems" ? (
             <>{item.count}</>

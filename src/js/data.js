@@ -1,6 +1,6 @@
 import { baserUrl } from "./baserUrl";
 
-export const eidiTossRewards = [
+export const tab1Rewards = [
   {
     id: 1,
     rank: "1st",
@@ -25,13 +25,33 @@ export const eidiTossRewards = [
 export const giftingTalnetrewards = [
   {
     id: 1,
-    target: "Talent Target: 80m",
+    target: (
+      <>
+        Talent <br /> Target: 80m
+      </>
+    ),
     frame: [
       {
         pic: `${baserUrl}streamkar/rewards/gems.png`,
         desc: (
           <span>
-            <span>3,000,000 </span>Gems
+            <span>3,000,000 Gems</span>
+          </span>
+        ),
+      },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero frame (New) x5 days</span>
+          </span>
+        ),
+      },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero room skin (New) x5 days</span>
           </span>
         ),
       },
@@ -39,13 +59,33 @@ export const giftingTalnetrewards = [
   },
   {
     id: 2,
-    target: "Talent Target: 70m",
+    target: (
+      <>
+        Talent <br /> Target: 70m
+      </>
+    ),
     frame: [
       {
         pic: `${baserUrl}streamkar/rewards/gems.png`,
         desc: (
           <span>
-            <span>2,000,000 </span>Gems
+            <span>2,000,000 Gems</span>
+          </span>
+        ),
+      },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero frame (New) x3 days</span>
+          </span>
+        ),
+      },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero room skin (New) x3 days</span>
           </span>
         ),
       },
@@ -53,13 +93,33 @@ export const giftingTalnetrewards = [
   },
   {
     id: 3,
-    target: "Talent Target: 50m",
+    target: (
+      <>
+        Talent <br /> Target: 50m
+      </>
+    ),
     frame: [
       {
         pic: `${baserUrl}streamkar/rewards/gems.png`,
         desc: (
           <span>
-            <span>1,000,000 </span>Gems
+            <span>1,000,000 Gems</span>
+          </span>
+        ),
+      },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero frame (New) x1 day</span>
+          </span>
+        ),
+      },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero room skin (New) x1 day</span>
           </span>
         ),
       },
@@ -79,6 +139,22 @@ export const giftingGifterrewards = [
           </span>
         ),
       },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero frame (New) x5 days</span>
+          </span>
+        ),
+      },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero room skin (New) x5 days</span>
+          </span>
+        ),
+      },
     ],
   },
   {
@@ -90,6 +166,22 @@ export const giftingGifterrewards = [
         desc: (
           <span>
             <span>2,000,000 </span>Beans
+          </span>
+        ),
+      },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero frame (New) x3 days</span>
+          </span>
+        ),
+      },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero room skin (New) x3 days</span>
           </span>
         ),
       },
@@ -107,524 +199,399 @@ export const giftingGifterrewards = [
           </span>
         ),
       },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero frame (New) x1 days</span>
+          </span>
+        ),
+      },
+      {
+        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        desc: (
+          <span>
+            <span>War Hero room skin (New) x1 days</span>
+          </span>
+        ),
+      },
     ],
   },
 ];
 export const eventGifts = [
   {
     id: 1,
-    img: `${baserUrl}streamkar/gifts/40001665.png`,
-    name: "Empower",
-    cost: "50k",
+    img: `${baserUrl}streamkar/gifts/40011725.png`,
+    name: "Jashan e Azadi",
+    cost: "40k",
   },
   {
     id: 2,
-    img: `${baserUrl}streamkar/gifts/40001648.png`,
-    name: "Rose Fall",
+    img: `${baserUrl}streamkar/gifts/40001677.png`,
+    name: "Jashan",
     cost: "25k",
   },
   {
     id: 3,
-    img: `${baserUrl}streamkar/gifts/40001668.png`,
-    name: "Sweets",
-    cost: "10k",
+    img: `${baserUrl}streamkar/gifts/40001428.png`,
+    name: "Aatish Baazi",
+    cost: "20k",
   },
   {
     id: 4,
     img: `${baserUrl}streamkar/gifts/40001330.png`,
-    name: "Money Rain",
-    cost: "5k",
+    name: "Baaja",
+    cost: "10k",
   },
 ];
-export const eidiTossRewsDetails = [
-  {
-    id: 1,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/titanRoomTheme.png`,
-        text: "Titan room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 2,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/titanFrame.png`,
-        text: "Titan frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 3,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/celeberationRoomskin.png`,
-        text: "Celebration room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 4,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/celebrationFrame.png`,
-        text: "Celebration frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 5,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/doyenFrame.png`,
-        text: "Doyen frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 6,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/spaceship.png`,
-        text: "Spaceship entrance x2 days",
-      },
-    ],
-  },
-  {
-    id: 7,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/seaWolfRoomSkin.png`,
-        text: "Sea Wolf room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 8,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/rustyRanger.png`,
-        text: "Rusty Ranger entrance x2 days",
-      },
-    ],
-  },
-  {
-    id: 9,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/beanbag.png`,
-        text: "1500 Beans",
-      },
-    ],
-  },
-  {
-    id: 10,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/beanbag.png`,
-        text: "1200 Beans",
-      },
-    ],
-  },
-];
-export const coinDazzleRewsDetails = [
-  {
-    id: 1,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/goldeRushFrame.png`,
-        text: "Goldrush frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 2,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/goldRushRoomTheme.png`,
-        text: "Goldrush room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 3,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/doyenRoomskin.png`,
-        text: "Doyen room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 4,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/peacemakerFrame.png`,
-        text: "Peacemaker frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 5,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/victorySlide.png`,
-        text: "Victory slide entrance x2 days",
-      },
-    ],
-  },
-  {
-    id: 6,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/celebrationFrame.png`,
-        text: "Celebration frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 7,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/hawk.png`,
-        text: "Hawk entrance x2 days",
-      },
-    ],
-  },
-  {
-    id: 8,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/alphaFrame.png`,
-        text: "Alpha frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 9,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/danceJockeyFrame.png`,
-        text: "Dance Jockey frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 10,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/danceJokeyRoomTheme.png`,
-        text: "Dance Jockey room skin x2 days",
-      },
-    ],
-  },
-];
-export const dancepartyRewsDetails = [
-  {
-    id: 1,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/danceJockeyFrame.png`,
-        text: "Dance Jockey frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 2,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/danceJokeyRoomTheme.png`,
-        text: "Dance Jockey room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 3,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/royaltiProfileFrame.png`,
-        text: "Royalty frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 4,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/blessedRoomSkin2k23.png`,
-        text: "Blessed room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 5,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/safariChampionRoomSkin.png`,
-        text: "Safari Champion room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 6,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/glory-frame.png`,
-        text: "Glory frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 7,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/monarch.png`,
-        text: "Monarch entrance x2 days",
-      },
-    ],
-  },
-  {
-    id: 8,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/pirateShip.png`,
-        text: "Pirate Ship entrance x2 days",
-      },
-    ],
-  },
-  {
-    id: 9,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/dragon.png`,
-        text: "Gold Dragon entrance x2 days",
-      },
-    ],
-  },
-  {
-    id: 10,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/phoenix.png`,
-        text: "Pheonix entrance x2 days",
-      },
-    ],
-  },
-];
-export const talentTreeRewsDetails = [
-  {
-    id: 1,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/goldeRushFrame.png`,
-        text: "Goldrush frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 2,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/goldRushRoomTheme.png`,
-        text: "Goldrush room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 3,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/danceJockeyFrame.png`,
-        text: "Dance Jockey frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 4,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/danceJokeyRoomTheme.png`,
-        text: "Dance Jockey room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 5,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/doyenRoomskin.png`,
-        text: "Doyen room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 6,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/celebrationFrame.png`,
-        text: "Celebration frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 7,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/kingshipRoom.png`,
-        text: "Kingship room skin x2 days",
-      },
-    ],
-  },
-  {
-    id: 8,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/monarch.png`,
-        text: "Monarch frame x2 days",
-      },
-    ],
-  },
-  {
-    id: 9,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/phoenix.png`,
-        text: "Phoenix entrance x2 days",
-      },
-    ],
-  },
-  {
-    id: 10,
-    rewards: [
-      {
-        pic: `${baserUrl}streamkar/rewards/gems.png`,
-        text: "1000 Gems   ",
-      },
-    ],
-  },
-];
+export const tab1Details = {
+  data: [
+    {
+      id: 1,
+      bomb: "Small Bomb",
+      successRate: "50%",
+      pointsReq: "10,000",
+      rewards: [
+        {
+          pic: `${baserUrl}streamkar/rewards/blazingFrame.png`,
+          text: "Blazing frame x1 day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/victorySlide.png`,
+          text: "Victory Slide entrance x1 day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/desireRoomSkin.png`,
+          text: "Desire room skin x1 day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/azadiFrame.png`,
+          text: "Azaadi Frame x1 day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/solar.png`,
+          text: "Solar Flare entrance x1 day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/celebrationFrame.png`,
+          text: "Celebration frame x1 day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/stadiumAudioTheme.jpg`,
+          text: "Stadium room skin x1 day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/freedomFrame.png`,
+          text: "Freedom frame x1 day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/peacemakerFrame.png`,
+          text: "Peacemaker frame x1 day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/beanbag.png`,
+          text: "500 Beans ",
+        },
+      ],
+    },
+    {
+      id: 2,
+      bomb: "Land Mine",
+      successRate: "80%",
+      pointsReq: "20,000",
+      rewards: [
+        {
+          pic: `${baserUrl}streamkar/rewards/nightShadow.png`,
+          text: "Night shadow room skin x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/freedomRoomSkin.png`,
+          text: "Freedom room skin x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/victoriousRoomSkin.png`,
+          text: "Victorious room skin x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/hawk.png`,
+          text: "Hawk Entrance x2days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/phantom.png`,
+          text: "Phantom entrance x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/seaWolfRoomSkin.png`,
+          text: "Sea wolf room skin x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/moonKnightFrame.png`,
+          text: "Moon Knight frame x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          text: "War Hero Frame x2 days (New)",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          text: "War Hero room skin x2 days (New)",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/beanbag.png`,
+          text: "1000 Beans",
+        },
+      ],
+    },
+    {
+      id: 3,
+      bomb: "Super Mine",
+      successRate: "100%",
+      pointsReq: "30,000",
+      rewards: [
+        {
+          pic: `${baserUrl}streamkar/rewards/conquerorFrame.png`,
+          text: "Conqueror frame x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/spaceship.png`,
+          text: "Spaceship entrance x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/azadiRoomskin.png`,
+          text: "Azaadi room skin x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/monarchProfileFrame.png`,
+          text: "Monarch frame x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/phoenix.png`,
+          text: "Phoenix entrance x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/bossRoomSkin.png`,
+          text: "Boss room skin x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/monarch.png`,
+          text: "Monarch entrance x2 days",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          text: "War Hero Frame x2 days (New)",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          text: "War Hero room skin x2 days (New)",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/beanbag.png`,
+          text: "1500 Beans",
+        },
+      ],
+    },
+  ],
+};
+export const tab2Details = {
+  data: [
+    {
+      id: 1,
+      buttonName: "Build",
+      pointsReq: "20,000",
+      rewards: [
+        {
+          pic: `${baserUrl}streamkar/rewards/bumblebee.png`,
+          text: "Bumblebee entrance x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/phoenix.png`,
+          text: "Phoenix entrance x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/doyenFrame.png`,
+          text: "Doyen Frame x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/conquerorRoomSkin.png`,
+          text: "Conqueror Room Skin x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/freedomFrame.png`,
+          text: "Freedom Frame x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/freedomRoomSkin.png`,
+          text: "Freedom Room Skin x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/conquerorFrame.png`,
+          text: "Conqueror frame x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          text: "War Hero Frame x2 days (New)",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          text: "War Hero room skin x2 days (New)",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/beanbag.png`,
+          text: "2000 Beans",
+        },
+      ],
+    },
+  ],
+};
+export const tab3Details = {
+  data: [
+    {
+      id: 1,
+      buttonName: "Fire",
+      pointsReq: "30,000",
+      rewards: [
+        {
+          pic: `${baserUrl}streamkar/rewards/firebrand-Profile-frame.png`,
+          text: "FireBrand Frame x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/luminarSkin.png`,
+          text: "Luminary room skin x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/solar.png`,
+          text: "Solar Flare entrance x 1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/freedomFrame.png`,
+          text: "Freedom Frame x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/freedomRoomSkin.png`,
+          text: "Freedom Room Skin x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/conquerorFrame.png`,
+          text: "Conqueror frame x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/conquerorRoomSkin.png`,
+          text: "Conqueror Room Skin x1 Day",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/gems.png`,
+          text: "1500 Gems",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          text: "War Hero Frame x2 days (New)",
+        },
+        {
+          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          text: "War Hero room skin x2 days (New)",
+        },
+      ],
+    },
+  ],
+};
 export var guideContent = {
   English: {
     topText: (
       <>
         <div>
-          When you send event gifts, you will get <span className="c-green">Game Points.</span>
+          When you send event gifts, you will get <span className="c-green">Jashan Points.</span>
         </div>
         <div>
-          1 bean of event gift sent = <span className="c-green">1 Game Point.</span>
+          1 bean of event gift sent = <span className="c-green">1 Jashan Point.</span>
         </div>
         <div>With these points, you will be able to play this event.</div>
       </>
     ),
-    eidiToss: (
+    firstBox: (
       <ul>
-        <li>In this part of the event, you can play a coin toss game. </li>
-        <li>You have to select one of the two coins by tapping on the selection image before tapping the "Toss" button. </li>
-        <li>Only one side of the coin can be selected at a time.</li>
-        <li className="c-yellow">1-time successful tap on “Toss” button = 15K Game Points </li>
-        <li>When you tap on the “Toss” button successfully, Game Points will be deducted & you will get rewards.</li>
-        <li>There will be 2 possible outcomes of the coin i.e. win or loss.</li>
-        <li>Each time you win a toss, value 1 will be added to the “Daily Toss Won” counter.</li>
-        <li className="c-yellow">
-          You can enter any value for the number of times you want to play in the text input box. The default value of the text input box is “1” &
-          maximum value is “99”.
-        </li>
-        <li>
-          When you tap on the “Toss” button without entering any value in the text input box successfully, by default the value is “1” so 15K Game
-          Points will be deducted, and you will get a reward.
-        </li>
-        <li>
-          When you enter any value in the text input box, that value will be multiplied by 15,000 & resultant points will be deducted. E.g. if you
-          enter value “5”, 5*15,000 = 75,000 so 75,000 Game points will be deducted, the outcome is (3 Wins & 2 Loss), value “3” will be added on the
-          “Daily Toss Won” counter & you will get total of 5 rewards.
-        </li>
-        <li>The users with the highest number of “Daily Toss Won” will be displayed on the leaderboard accordingly and will win Beans Pot Reward.</li>
-        <li className="c-yellow">
-          0.3% of spending will be collected in the BEANS POT and collected Beans will be distributed among the top 3 Rankers of the leaderboard, each
-          day.
-        </li>
-        <li>All statistics of the game will reset daily at 00:00:00 GMT.</li>
-      </ul>
-    ),
-    CoinDazzle: (
-      <ul>
-        <li>In this part of the event, you can play the coin pusher game and get gold coins.</li>
-        <li className="c-yellow">1-time successful tap on “Play” button = 20K Game Points.</li>
-        <li>
-          Each time you tap on the “Play” button successfully, Game Points will be deducted & you will get a reward & different number of gold coins.
-        </li>
+        <li>In this part of the event, you can battle with enemies by deploying different kinds of mines on the battlefield.</li>
+        <li>Each “Mine” has a different coverage area & acquires a different number of Jashan Points & has a different success percentage.</li>
+        <li>Only 1 type of mine can be selected at a time.</li>
         <li className="c-yellow">
           You can enter any value for the number of times you want to play in the text input box. The default value of the text input box is “1” &
           maximum value is “999”.
         </li>
         <li>
-          When you tap on the “Play” button without entering any value in the text input box successfully, by default the value is “1” so 20K Game
-          points will be deducted, and you will get a reward & gold coins.
+          You can tap on the "+" Plus key to increase the chance you want to play game with that mine or enter the desired number value in the text
+          input box.
         </li>
+        <li>To play the game, you can either tap anywhere on the 5x5 gird battle field or tap on the “Start” button. </li>
         <li>
-          When you enter any value in the text input box, that value will be multiplied by 20,000 & resultant points will be deducted. E.g. if you
-          enter the value “5”, 5*20,000 = 100,000 so 100,000 Eidi points will be deducted & you will get 5 rewards & 5 different outcomes of gold
-          coins.
+          When you tap anywhere on the battlefield or tap on the “Start” button with a selected mine, Jashan Points will be deducted according to the
+          type of mine selected & you will get a reward.
         </li>
-        <li>E.g. if you enter value “5”, the outcome result of gold coins is (2,2,3,4,6) so, you have earned a total of 17 gold coins.</li>
-        <li>There are 6 different tasks displayed on the webpage.</li>
-        <li>By clicking on the GO button, you will be navigated to the specific task</li>
-        <li className="c-yellow">Each time you complete a task you will get gold coins.</li>
-        <li>You can get gold coins by tapping on the “Collect coins” button.</li>
-        <li className="c-yellow">All tasks will reset daily at 00:00:00 GMT.</li>
-        <li>Above the “Coin Pusher Machine”, a Progress Bar with 8 different targets & rewards is displayed.</li>
-        <li>This Progress Bar will accumulate with the number of gold coins you get from playing the game & completing the tasks.</li>
-        <li>Each time you reach a target on the Progress Bar you will get a Beans Bonus Reward.</li>
+        <li className="c-yellow">There are 2 outcomes of the game play i.e. Success and Failure.</li>
+        <li>Each time you win a battle i.e. the outcome is success, value “1” will be added to the “Daily Enemies Defeated” counter.</li>
+        <li>“Daily Enemies Defeated” counter will reset daily at 00:00:00 GMT.</li>
+        <li>Each time you win a battle i.e. the outcome is success, the “War Victory” Progress Bar will accumulate accordingly.</li>
         <li>
-          The total amount of beans received from achieving the targets on the Progress Bar will be denoted on the “Total Beans Reward” counter.
+          When you successfully defeat the enemy 20 times, the war will be won, and you will get 2000 beans clearance reward, and then a new round of
+          progress bar accumulation will start again i.e. can be completed repeatedly.
         </li>
+        <li>The “War Victory” Progress Bar will not reset to zero every day.</li>
         <li>
-          Each time you get gold coins from the “Coin Pusher Machine” or from completing the tasks, those gold coins will be added to the “My Gold
-          Coins” counter.
-        </li>
-      </ul>
-    ),
-    danceParty1: (
-      <ul>
-        <li>
-          In this part of the event, you can join the dance floor & when a specific number of users have joined the "Dance Floor", a random number of
-          specified users will win Beans bonus rewards.
-        </li>
-      </ul>
-    ),
-    danceParty2: (
-      <ul>
-        <li>A total of 5000 users can join the "Dance Floor". </li>
-        <li className="c-yellow">1-time successful tap on “Join” button = 10K Eidi Points.</li>
-        <li>When you tap on the “Join” button successfully, your avatar & name will be displayed on the “Dance Floor”.</li>
-        <li>
-          Once you have joined the “Dance Floor” successfully, the “Join” button will be disabled, & will be enabled again when the Progress Bar
-          resets.
-        </li>
-        <li>A Progress Bar will denote all 5 thresholds & the total number of users who have joined the “Dance Floor".</li>
-        <li>
-          Upon reaching each threshold, a specified number of random users from all the users who have joined the dance floor will get the Beans Bonus
+          The users with the highest number of “Daily Enemies Defeated” will be displayed on the leaderboard accordingly and will win Beans Pot
           Reward.
         </li>
-        <li>
-          When all 5000 users have joined the "Dance Floor”, a specific number of random users from all the users who have joined the dance floor will
-          win Beans Bonus rewards & the progress bar will reset along with all thresholds.
+        <li className="c-yellow">
+          0.5% of the beans spent on event gifts will be collected in the BEANS POT and collected Beans will be distributed among the top 3 Rankers of
+          the leaderboard, each day.
         </li>
-        <li className="c-yellow">When the progress bar resets, you will be able to join the “Dance Floor” again.</li>
-        <li>The progress bar will not reset on daily basis.</li>
       </ul>
     ),
-    talentTree: (
+    secondBox: (
+      <ul>
+        <li>In this part of the event, you can construct a building to 6 different construction levels.</li>
+        <li>Each level acquires different number of “Construction Points” to be reached.</li>
+        <li className="c-yellow">1-time successful tap on the “Build” button = 20K Jashan Points.</li>
+        <li className="c-yellow">
+          You can enter any value for the number of times you want to play in the text input box. The default value of the text input box is “1” &
+          maximum value is “999”.
+        </li>
+        <li>
+          When you tap on the "Build" button without entering any value in the text input box successfully, by default the value is "1" so 20K Jashan
+          points will be deducted, you will get “10” Construction points and a reward.
+        </li>
+        <li>
+          When you enter any value in the text input box and tap on the "Build" button, that value will be multiplied by 20,000 & points will be
+          deducted according to the result. E.g. if you enter value "5”, 5*20,000 = 100,000 so 100,000 Jashan Points will be deducted, and you will
+          get “50” Construction points and 5 rewards.
+        </li>
+        <li>When you reach the building construction level 3, beans as a reward will be produced.</li>
+        <li className="c-yellow">These beans will be produced from level 3 to level 6.</li>
+        <li>
+          The growth rate of beans output per minute is different for different levels, and each level has a corresponding upper limit for beans.
+        </li>
+        <li>After reaching the corresponding beans limit, no more beans will be generated.</li>
+        <li>When you reach level 6, you can continue to play, and the beans will increase.</li>
+        <li>
+          Each time you get Construction Points by tapping on the “Build” button successfully, value “10” will be added to the “Construction Points”
+          counter.
+        </li>
+        <li>Each time you reach the next Building level, the “Construction Points” counter will increase for the next level.</li>
+        <li>
+          When you start producing beans from Building Level 3, value on “Today's Estimated Rewards” counter will start accumulating accordingly.
+        </li>
+        <li>"Today's Estimated Rewards” counter will reset daily at 00:00:00 GMT.</li>
+        <li>“My Accumulated Earnings” counter will display your actual bean earnings produced throughout the event.</li>
+        <li>The building upgrade progress will reset daily at 00:00:00 GMT.</li>
+        <li>The generated beans income will be sent to the user account at 24:00:00 GMT every day.</li>
+      </ul>
+    ),
+    thirdBox: (
       <ul>
         <li>This part of the event is for talents only.</li>
         <li>By receiving event gifts, you will get Talent Points.</li>
         <li className="c-yellow">1 Gem of event gift received = 1 Talent Point.</li>
-        <li>In this part of the event, you can shake a magical tree and win rewards.</li>
-        <li className="c-yellow">1-time successful tap on “Shake Tree” button = 30K Talent Points.</li>
-        <li>You can play using combo options x10 and x100.</li>
-        <li>You will have to select any 1 of the combos first then tap on the “Shake Tree” button.</li>
-        <li className="c-yellow">When you tap on the “Shake Tree” button successfully, you will get a reward.</li>
+        <li>In this part of the event, you can do fireworks and win rewards.</li>
+        <li className="c-yellow">1-time successful tap on “Fire” button = 30K Talent Points.</li>
+        <li>You have to select any 1 of the combos first, then tap on the “Fire” button.</li>
+        <li className="c-yellow">When you tap on the “Fire” button successfully, talent points will be deducted and you will get a reward.</li>
       </ul>
     ),
     h1: <h1 className="h1">For Users</h1>,
@@ -647,134 +614,113 @@ export var guideContent = {
     topText: (
       <>
         <div>
-          Jab aap event gifts bhejen gy, toh aap haasil karen gy <span className="c-green">Game Points.</span>
+          When you send event gifts, you will get <span className="c-green">Jashan Points.</span>
         </div>
         <div>
-          1 bean of event gift sent = <span className="c-green">1 Game Point.</span>
+          1 bean of event gift sent = <span className="c-green">1 Jashan Point.</span>
         </div>
-        <div>In points k sath, aap yeh event khel sakein gy.</div>
+        <div>With these points, you will be able to play this event.</div>
       </>
     ),
-    eidiToss: (
+    firstBox: (
       <ul>
-        <li>Event k is hissay mein, aap coin toss game khel sakty hain. </li>
-        <li>Aapko "Toss" button ko tap karne sy pehle selection image par tap karke do coins mein sy aik ko select karna hoga.</li>
-        <li>Ek waqt mein coin ki sirf aik side select ki ja sakti hai.</li>
-        <li className="c-yellow">“Toss" button par aik bar successful tap = 15k Game Points.</li>
-        <li>Jab aap "Toss" button par kamiyabi sy tap karty hain, toh Game Points kaat ho jayengy aur aapko rewards milein gy.</li>
-        <li>Coin k 2 mumkin outcome hongy i.e jeet ya haar.</li>
-        <li>Har dafa jab aap toss jeetain gy, toh "Daily Toss Won" counter mein value 1 shamil ki jayegi.</li>
+        <li>In this part of the event, you can battle with enemies by deploying different kinds of mines on the battlefield.</li>
+        <li>Each “Mine” has a different coverage area & acquires a different number of Jashan Points & has a different success percentage.</li>
+        <li>Only 1 type of mine can be selected at a time.</li>
         <li className="c-yellow">
-          Aap jitni bar play karna chahty hai text input box main value daal sakte hain. Text input box ki default value "1" hai aur maximum value
-          "99" hai.
+          You can enter any value for the number of times you want to play in the text input box. The default value of the text input box is “1” &
+          maximum value is “999”.
         </li>
         <li>
-          Jab aap text input box mein koi value dale bina “Toss” button par tap karty hain, toh by default value '1' hogi, 15K Game points kaat
-          jayengy aur aapko reward miley ga.
+          You can tap on the "+" Plus key to increase the chance you want to play game with that mine or enter the desired number value in the text
+          input box.
         </li>
+        <li>To play the game, you can either tap anywhere on the 5x5 gird battle field or tap on the “Start” button. </li>
         <li>
-          Jab aap text input box mein koi bhi value daalty hain, toh wo value 15,000 sy multiply ki jayegi aur resultant points kaat jayengy. E.g.
-          agar aap '5' ki value daalty hain, toh 5*15,000 = 75,000 Game points kaat jayengy, toss ka outcome hoga (3 jeet aur 2 haar), toh value "3"
-          ko "Daily Toss Won" counter par shamil kiya jayega aur aapko total 5 rewards milein gy.
+          When you tap anywhere on the battlefield or tap on the “Start” button with a selected mine, Jashan Points will be deducted according to the
+          type of mine selected & you will get a reward.
         </li>
-        <li>Sabse zyada “Daily Toss Won” wale users ko leaderboard par dikhaya jayega aur unhy Beans Pot Rewards milein gy.</li>
-        <li className="c-yellow">
-          Event gifts par kharch hone wale beans ka 0.3% beans pot mein collect hoga aur collect kiye gaye Beans ko leaderboard k top 3 rankers k
-          beech har roz distribute kiya jaye ga.
-        </li>
-        <li>Game ki tamam statistics rozana 00:00:00 GMT par reset hongi.</li>
-      </ul>
-    ),
-    CoinDazzle: (
-      <ul>
-        <li>Event k is hissay mein, aap coin pusher game khel saky hain aur gold coins haasil kar sakty hain.</li>
-        <li className="c-yellow">“Play" button par aik bar successful tap = 20k Game Points.</li>
+        <li className="c-yellow">There are 2 outcomes of the game play i.e. Success and Failure.</li>
+        <li>Each time you win a battle i.e. the outcome is success, value “1” will be added to the “Daily Enemies Defeated” counter.</li>
+        <li>“Daily Enemies Defeated” counter will reset daily at 00:00:00 GMT.</li>
+        <li>Each time you win a battle i.e. the outcome is success, the “War Victory” Progress Bar will accumulate accordingly.</li>
         <li>
-          Har dafa jab aap "Play" button par kamiyabi sy tap karengy, Game Points kaat jayengy aur aapko reward aur mukhtalif tadad mein gold coins
-          milein gy.
+          When you successfully defeat the enemy 20 times, the war will be won, and you will get 2000 beans clearance reward, and then a new round of
+          progress bar accumulation will start again i.e. can be completed repeatedly.
+        </li>
+        <li>The “War Victory” Progress Bar will not reset to zero every day.</li>
+        <li>
+          The users with the highest number of “Daily Enemies Defeated” will be displayed on the leaderboard accordingly and will win Beans Pot
+          Reward.
         </li>
         <li className="c-yellow">
-          Aap jitni bar play karna chahty hai text input box main value daal sakte hain. Text input box ki default value "1" hai aur maximum value
-          "99" hai.
-        </li>
-        <li>
-          Jab aap text input box mein koi value dale bina “Play” button par tap karty hain, toh by default value '1' hogi, 20K Game points kaat
-          jayengy aur aapko reward aur gold coins milein gy.
-        </li>
-        <li>
-          Jab aap text input box mein koi bhi value daalty hain, toh wo value 20,000 sy multiply ki jayegi aur resultant points kaat jayengy. E.g.
-          agar aap '5' ki value daalty hain, toh 5*20,000 = 100,000 Game points kaat jayengy aur aapko 5 rewards aur 5 mukhtalif outcomes k gold coins
-          milein gy.
-        </li>
-        <li>E.g. agar aap "5" ki value daalty hain, aur gold coins ka outcome (2, 2, 3, 4, 6) hai, tou aap ne total 17 gold coins earn kiye hain.</li>
-        <li>Webpage par 6 mukhtalif tasks dikhaye gaye hain.</li>
-        <li>Go button pa click karne sy ap specific task pa pohanch jayen gy.</li>
-        <li className="c-yellow">Har dafa jab aap koi task mukamal karengy toh aapko gold coins milein gy.</li>
-        <li>Aap "Collect coins" button par tap karke gold coins haasil kar sakty hain.</li>
-        <li className="c-yellow">Tamam tasks rozana 00:00:00 GMT par reset hongy.</li>
-        <li>"Coin Pusher Machine" k upar, aik Progress Bar 8 mukhtalif targets aur rewards k saath dikhai gai hai.</li>
-        <li>Ye Progress Bar gold coins ki tadad k sath jama hogi jo aapko game khelne aur tasks ko mukamal karne sy milty hain.</li>
-        <li>Har dafa jab aap Progress Bar par kisi target tak pohnchein gy, toh aapko Beans Bonus Reward miley ga.</li>
-        <li>Progress Bar par targets haasil karne sy miley beans ki total amount "Total Beans Reward" counter par zahir ki jayegi.</li>
-        <li>
-          Har dafa jab aap "Coin Pusher Machine" sy ya tasks ko mukamal karne sy gold coins haasil karty hain, toh wo gold coins "My Gold Coins"
-          counter mein shamil ho jayengy.
+          0.5% of the beans spent on event gifts will be collected in the BEANS POT and collected Beans will be distributed among the top 3 Rankers of
+          the leaderboard, each day.
         </li>
       </ul>
     ),
-    danceParty1: (
+    secondBox: (
       <ul>
-        <li>
-          Event k is hissay mein, aap dance floor mein shamil ho sakty hain aur jab users ki ek makhsoos tadad “Dance floor” mein shamil ho jaye gi,
-          toh kuch random users Beans bonus rewards jeetain gy.
+        <li>In this part of the event, you can construct a building to 6 different construction levels.</li>
+        <li>Each level acquires different number of “Construction Points” to be reached.</li>
+        <li className="c-yellow">1-time successful tap on the “Build” button = 20K Jashan Points.</li>
+        <li className="c-yellow">
+          You can enter any value for the number of times you want to play in the text input box. The default value of the text input box is “1” &
+          maximum value is “999”.
         </li>
+        <li>
+          When you tap on the "Build" button without entering any value in the text input box successfully, by default the value is "1" so 20K Jashan
+          points will be deducted, you will get “10” Construction points and a reward.
+        </li>
+        <li>
+          When you enter any value in the text input box and tap on the "Build" button, that value will be multiplied by 20,000 & points will be
+          deducted according to the result. E.g. if you enter value "5”, 5*20,000 = 100,000 so 100,000 Jashan Points will be deducted, and you will
+          get “50” Construction points and 5 rewards.
+        </li>
+        <li>When you reach the building construction level 3, beans as a reward will be produced.</li>
+        <li className="c-yellow">These beans will be produced from level 3 to level 6.</li>
+        <li>
+          The growth rate of beans output per minute is different for different levels, and each level has a corresponding upper limit for beans.
+        </li>
+        <li>After reaching the corresponding beans limit, no more beans will be generated.</li>
+        <li>When you reach level 6, you can continue to play, and the beans will increase.</li>
+        <li>
+          Each time you get Construction Points by tapping on the “Build” button successfully, value “10” will be added to the “Construction Points”
+          counter.
+        </li>
+        <li>Each time you reach the next Building level, the “Construction Points” counter will increase for the next level.</li>
+        <li>
+          When you start producing beans from Building Level 3, value on “Today's Estimated Rewards” counter will start accumulating accordingly.
+        </li>
+        <li>"Today's Estimated Rewards” counter will reset daily at 00:00:00 GMT.</li>
+        <li>“My Accumulated Earnings” counter will display your actual bean earnings produced throughout the event.</li>
+        <li>The building upgrade progress will reset daily at 00:00:00 GMT.</li>
+        <li>The generated beans income will be sent to the user account at 24:00:00 GMT every day.</li>
       </ul>
     ),
-    danceParty2: (
+    thirdBox: (
       <ul>
-        <li>Total 5000 users “Dance Floor” mein shamil ho sakte hain.</li>
-        <li className="c-yellow">“Join" button par aik bar successful tap = 10k Eidi Points.</li>
-        <li>Jab aap “Join” button par kamiyabi sy tap karty hain, toh aap ka avatar aur naam “Dance Floor” par zahir hoga.</li>
-        <li>
-          Aik bar jab aap “Dance Floor” mein kamiyabi k sath shamil ho jayen gy toh, “Join” button disable hojaye ga, aur progress bar k reset hone
-          par dubara enable hojaye ga.
-        </li>
-        <li>Progress bar tamam 5 thresholds aur users ki kul tadad ko zahir kare gi jinho ne “Dance Floor” mein shamuliat ikhtiyar ki hai.</li>
-        <li>
-          Har threshold tak pohnchne par, dance floor mein shamil hone walay tamam users mein sy specific random users ko Beans Bonus Reward miley ga.
-        </li>
-        <li>
-          Jab tamam 5000 users "Dance Floor" mein shamil ho jayengy, toh dance floor mein shamil hone walay tamam users mein sy specific random users
-          Beans Bonus Rewards jeetein gy aur progress bar tamam thresholds k saath reset ho jayegi.
-        </li>
-        <li className="c-yellow">Progress bar reset hone par, ap dubara "Dance Floor" mein shamil ho sakty hain.</li>
-        <li>Progress bar rozana reset nai hogi.</li>
-      </ul>
-    ),
-    talentTree: (
-      <ul>
-        <li>Event ka yeh hissa sirf talents k liye hai.</li>
-        <li>Event gifts receive karne sy apko talent points milein gy.</li>
+        <li>This part of the event is for talents only.</li>
+        <li>By receiving event gifts, you will get Talent Points.</li>
         <li className="c-yellow">1 Gem of event gift received = 1 Talent Point.</li>
-        <li>Event k is hissay mein, ap magical tree ko shake kar k rewards jeet sakty hain.</li>
-        <li className="c-yellow">“Shake Tree" button par aik bar successful tap = 30k Talent Points.</li>
-        <li>Aap combo options x10 aur x100 istamal karke bhi khel sakte hain.</li>
-        <li>Aapko phele kisi bhi 1 combo ko select karke phir "Shake Tree" button par tap karna hoga.</li>
-        <li className="c-yellow">Jab aap "Shake Tree" button par kamiyabi sy tap karty hain, toh aapko reward miley ga.</li>
+        <li>In this part of the event, you can do fireworks and win rewards.</li>
+        <li className="c-yellow">1-time successful tap on “Fire” button = 30K Talent Points.</li>
+        <li>You have to select any 1 of the combos first, then tap on the “Fire” button.</li>
+        <li className="c-yellow">When you tap on the “Fire” button successfully, talent points will be deducted and you will get a reward.</li>
       </ul>
     ),
     h1: <h1 className="h1">For Users</h1>,
     desc1: (
       <ol>
-        <li>Total ranking mein, top 3 users ko rewards milein gy.</li>
-        <li>Rewards event khatam honay k 7 din baad tak send kiye jayen gy.</li>
+        <li>In the total ranking, the top 3 users will be rewarded.</li>
+        <li>Rewards will be sent after 7 working days of the event end date.</li>
       </ol>
     ),
     h2: <h1 className="h1">For Talents</h1>,
     desc2: (
       <ol>
-        <li>Total ranking mein, top 3 talents ko rewards milein gy.</li>
-        <li>Rewards event khatam honay k 7 din baad tak send kiye jayen gy.</li>
+        <li>In the total ranking, the top 3 talents will be rewarded.</li>
+        <li>Rewards will be sent after 7 working days of the event end date.</li>
       </ol>
     ),
   },

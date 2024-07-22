@@ -5,6 +5,7 @@ import MainTabButtons from "./components/MainTabButtons";
 import Popups from "./components/common/Popups";
 import { overFlowAuto, overFlowHidden } from "./js/helpers";
 import PopupBtns from "./components/PopupBtns";
+import balloons from "./assets/Ballons.png";
 import "./App.scss";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
       <div className="App">
         <div className="header">
           <img src={Header} alt="" />
+          <img src={balloons} alt="" />
         </div>
         <LanguageBar language={language} setLanguage={setLanguage} />
         <MainTabButtons mainTabs={mainTabs} setMainTabs={setMainTabs} />

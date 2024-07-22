@@ -3,7 +3,7 @@ import unknown from "../../../assets/unknown.png";
 import frame from "../../../assets/onward-Frame.png";
 import { captureImageError, formatData } from "../../../js/helpers";
 import { baserUrl } from "../../../js/baserUrl";
-import raceIcon from "../../../assets/bean.png";
+import enemiesIcon from "../../../assets/Daily-Enemies-Defeated-Icon.png";
 import beanIcon from "../../../assets/bean.png";
 // import gemIcon from "../../../assets/gems.png";
 import LeaderBoardSlider from "./../../leaderboard-slider/LeaderBoardSlider";
@@ -28,10 +28,10 @@ function RestWinners({
   let level;
   let icon;
 
-  if (tab2) {
+  if (tab1) {
     levelUrl = `${baserUrl}streamkar/common/img/ulv/`;
     level = userLevel;
-    icon = raceIcon;
+    icon = enemiesIcon;
   } else if (eventGifting) {
     if (subTabs.Talents) {
       levelUrl = `${baserUrl}streamkar/common/img/tlv/`;
@@ -54,11 +54,13 @@ function RestWinners({
   let arrayDesc = desc && JSON.parse(desc);
   return (
     <>
-      {tab1 || tab3 ? (
-        <div className="users-details-onward f-tangoItalic" key={index}>
+      {tab2 || tab3 ? (
+        <div className="users-details-onward f-tangoItalic p-rel" key={index}>
+          <div className="rank-id d-flex al-center jc-center" style={{ top: "1vw", left: "43vw" }}>
+            {listNumber}.
+          </div>
           <div className="d-flex al-center p-rel jc-center">
-            <div className="rank-id d-flex al-center jc-center">{listNumber}.</div>
-            <div className="d-flex al-center gap-2">
+            <div className="d-flex al-center gap-1">
               <img onError={captureImageError} className="rank-user-image" src={userAvatar ? userAvatar : unknown} alt="" />
               <a href={`http://www.kktv1.com/m/?roomid=${userId}`}>
                 <img className="rank-border-image p-rel" src={frame} alt="" />
@@ -76,8 +78,10 @@ function RestWinners({
       ) : (
         <div className="users-details-onward f-tangoItalic" key={index}>
           <div className="d-flex al-center p-rel jc-center">
-            <div className="rank-id d-flex al-center jc-center">{listNumber}.</div>
-            <div className="d-flex al-center gap-2">
+            <div className="rank-id d-flex al-center jc-center" style={tab1 ? { top: "-3vw", left: "38vw" } : { top: "-3vw", left: "31vw" }}>
+              {listNumber}.
+            </div>
+            <div className="d-flex al-center gap-1">
               <img onError={captureImageError} className="rank-user-image" src={userAvatar ? userAvatar : unknown} alt="" />
               <a href={`http://www.kktv1.com/m/?roomid=${userId}`}>
                 <img className="rank-border-image p-rel" src={frame} alt="" />
@@ -89,7 +93,7 @@ function RestWinners({
             </div>
           </div>
           <div className="est-rew d-flex al-center jc-start gap-1">
-            <img style={{ width: "5vw", height: "5vw" }} src={icon} alt="" />
+            <img style={{ width: "7vw", height: "7vw" }} src={icon} alt="" />
             <span>{userScore}</span>
           </div>
         </div>
