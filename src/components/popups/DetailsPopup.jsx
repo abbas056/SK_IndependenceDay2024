@@ -26,7 +26,7 @@ function DetailsPopup({ close, mainTabs }) {
             <div className="body d-flex w-100">
               <div className="d-flex fd-column w-100">
                 {rewDetails?.data?.map((data, i) => (
-                  <div className="d-flex w-100">
+                  <div className="d-flex w-100" key={i}>
                     <div className="bg-light-yellow border-b w-15 d-flex al-center jc-center">{data.bomb}</div>
                     <div className=" bg-light-yellow border-b w-15 d-flex al-center jc-center">{data.successRate}</div>
                     <div className="bg-light-yellow border-b w-15 d-flex al-center jc-center">{data.pointsReq}</div>

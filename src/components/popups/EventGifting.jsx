@@ -12,7 +12,7 @@ import title from "../../assets/Leaderboard-title.png";
 import SubButtons from "../sub-tabs/SubButtons";
 import SliderItems from "../rewards-slider/SliderItems";
 function EventGifting({ close, eventGifting }) {
-  const { tickertape } = useContext(ApiContext);
+  const { userInfo, beansSend, beansReceived } = useContext(ApiContext);
   const [subButtons, setsubButtons] = useState({
     Talents: true,
     Gifters: false,
@@ -22,12 +22,13 @@ function EventGifting({ close, eventGifting }) {
     Gifters: false,
   });
   let winners;
+  let beansPot;
   if (subTabs.Talents) {
-    winners = tickertape;
-    // beansPot = userInfo?.beansPotInfo?.[todayKey];
+    winners = beansReceived;
+    beansPot = userInfo?.beansTotalReceived;
   } else {
-    winners = tickertape;
-    // beansPot = userInfo?.beansPotInfo?.[prevKey];
+    winners = beansSend;
+    beansPot = userInfo?.beansTotalSend;
   }
 
   const topWinners = slicePlease(winners?.list, 0, 3);
@@ -78,6 +79,7 @@ function EventGifting({ close, eventGifting }) {
             setSubTabs={setSubTabs}
             subBtn1name={"Talents"}
             subBtn2name={"Gifters"}
+            beansPot={beansPot}
           />
           <div className="gifting-footer f-tangoItalic">All Rights Reserved </div>
         </div>

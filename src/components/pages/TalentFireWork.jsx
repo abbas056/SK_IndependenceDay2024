@@ -7,13 +7,14 @@ import { ApiContext } from "../../services/Api";
 import title from "../../assets/Winners-Title.png";
 
 function TalentFireWork({ tab3 }) {
-  const { tickertape } = useContext(ApiContext);
+  const { userInfo, talentFireworks } = useContext(ApiContext);
+  let talentPoints = userInfo?.talentPoints;
 
   return (
     <div>
-      <MyPoints icon={pontsIcon} text="My Talent Points: " points={1} tab3={tab3} />
+      <MyPoints icon={pontsIcon} text="My Talent Points: " points={talentPoints} tab3={tab3} />
       <FireWorkGame />
-      <LeaderBoard tab3={tab3} restWinners={tickertape?.list} arrayData={tickertape} maxheight={"270vw"} title={title} />
+      <LeaderBoard tab3={tab3} restWinners={talentFireworks?.list} arrayData={talentFireworks} maxheight={"270vw"} title={title} />
     </div>
   );
 }

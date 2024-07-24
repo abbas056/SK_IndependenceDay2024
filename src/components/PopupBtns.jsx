@@ -9,18 +9,10 @@ function PopupBtns({ mainTabs, popupSwitch }) {
       <button className="p-fix f-tangoItalic" onClick={() => popupSwitch("eventGifting")}>
         Event <br /> Gifitng
       </button>
-      <button
-        className="p-abs f-tangoItalic"
-        style={mainTabs.tab1 || mainTabs.tab2 || mainTabs.tab4 ? { top: "133vw" } : { top: "160vw" }}
-        onClick={() => popupSwitch("details")}
-      >
+      <button className="p-abs f-tangoItalic" style={{ top: "128vw" }} onClick={() => popupSwitch("details")}>
         Details
       </button>
-      <button
-        className="p-abs f-tangoItalic"
-        style={mainTabs.tab1 || mainTabs.tab2 || mainTabs.tab4 ? { top: "133vw" } : { top: "160vw" }}
-        onClick={() => popupSwitch("records")}
-      >
+      <button className="p-abs f-tangoItalic" style={{ top: "128vw" }} onClick={() => popupSwitch("records")}>
         Records
       </button>
     </div>

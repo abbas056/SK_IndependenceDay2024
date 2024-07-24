@@ -29,9 +29,9 @@ function SliderItems({ eventGifting, rewards }) {
                         </div>
                         <div className="rewardImg d-flex al-center jc-center">
                           {item?.frame?.map((_items, index) => (
-                            <div className="d-flex fd-column al-center jc-center w-30">
-                              <div className="img-box d-flex al-center jc-center" key={index}>
-                                <img src={_items.pic} alt="" key={index} />
+                            <div className="d-flex fd-column al-center jc-center w-30" key={index}>
+                              <div className="img-box d-flex al-center jc-center">
+                                <img src={_items.pic} alt="" />
                               </div>
                               <div className="desc d-flex jc-center al-start">{_items.desc}</div>
                             </div>

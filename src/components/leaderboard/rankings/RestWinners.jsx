@@ -93,7 +93,7 @@ function RestWinners({
             </div>
           </div>
           <div className="est-rew d-flex al-center jc-start gap-1">
-            <img style={{ width: "7vw", height: "7vw" }} src={icon} alt="" />
+            <img style={{ width: "6vw", height: "6vw" }} src={icon} alt="" />
             <span>{userScore}</span>
           </div>
         </div>

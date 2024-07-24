@@ -230,6 +230,7 @@
     th {
       background-color: #e37820;
       padding: 1vw;
+      font-weight: lighter;
     }
     td {
       padding: 1vw;
@@ -286,7 +287,7 @@
 }
 .my-points {
   max-width: 60%;
-  font-size: 3vw;
+  font-size: 2.5vw;
   color: #14410b;
   img {
     width: 6vw;
@@ -296,18 +297,51 @@
   background-image: url(./assets/Game-Section-Base.png);
   background-size: 100% 100%;
   width: 95%;
-  height: 120vw;
-  padding: 5vw 2vw;
-  &-area {
-    border: 1px solid white;
-    width: 95%;
-    height: 50vw;
+  padding: 3vw 2vw;
+  &-battleField {
+    background-image: url(./assets/GameAssets/Tab1GameAssets/Battlefield.png);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 110vw;
     color: white;
+    .soldiers {
+      width: 50%;
+      top: 16vw;
+      img {
+        width: 8vw;
+      }
+    }
+    .plus {
+      img {
+        width: 40vw;
+      }
+    }
+    .hand {
+      right: 36vw;
+      top: 52vw;
+      width: 12vw;
+    }
+    .canon {
+      bottom: 0;
+      img {
+        width: 30vw;
+      }
+    }
   }
   &-progress {
     width: 95%;
     height: 16vw;
     font-size: 3vw;
+    color: #fec723;
+    margin-top: -15vw;
+    z-index: 1;
+    .text {
+      background-color: #044623;
+      border: 1.5px solid #fec723;
+      border-radius: 5vw;
+      padding: 0.5vw 2vw;
+      font-family: Arial, Helvetica, sans-serif;
+    }
     .progress-bar {
       width: 100%;
       .bar {
@@ -388,10 +422,13 @@
   .score-counter {
     background-image: url(./assets/Daily-Enemies-Defeated-Base.png);
     background-size: 100% 100%;
-    width: 60%;
-    height: 11vw;
-    font-size: 2.8vw;
+    width: 55%;
+    height: 8vw;
+    font-size: 2vw;
     padding-bottom: 2vw;
+    color: #124e1c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
     img {
       width: 5vw;
     }
@@ -551,7 +588,7 @@
 }
 .sub-buttons {
   width: 85%;
-  height: 11vw;
+  height: 12vw;
   margin-top: 5vw !important;
   button {
     font-size: 3vw;
@@ -610,9 +647,9 @@
       font-size: 5vw;
     }
     .top-text {
-      width: 100%;
+      width: 90%;
       height: 12vw;
-      font-size: 2.8vw;
+      font-size: 2.5vw;
       margin-top: 4vw;
     }
     .how-to-play {
@@ -777,7 +814,7 @@
             .bottom-info {
               width: 75%;
               .username {
-                font-size: 3.5vw;
+                font-size: 2.8vw;
                 text-align: center;
                 overflow: hidden;
                 white-space: nowrap;
@@ -799,7 +836,7 @@
                 align-items: center;
                 width: 10vw;
                 padding: 0.5vw 1vw;
-                font-size: 3.5vw;
+                font-size: 2.8vw;
               }
             }
             .first-user {
@@ -986,9 +1023,8 @@
 .builder-game {
   background-image: url(./assets/Game-Section-Base.png);
   background-size: 100% 100%;
-  width: 95%;
-  height: 100vw;
-  padding: 5vw 2vw;
+  width: 98%;
+  padding-bottom: 8vw;
   margin-top: 10vw !important;
   &-earnings {
     background-image: url(./assets/Accumulated-Earning.png);
@@ -996,16 +1032,41 @@
     width: 85%;
     height: 12vw;
     font-size: 3.2vw;
-    margin-top: -10vw;
+    margin-top: -11vw;
     img {
       width: 5vw;
     }
   }
   &-area {
-    border: 1px solid white;
-    width: 95%;
-    height: 50vw;
+    background-image: url(./assets/GameAssets/Tab2GameAssets/Game-bg.png);
+    background-size: 100% 100%;
+    width: 97%;
+    height: 100vw;
     color: white;
+    .estimated-rewards {
+      top: 7vw;
+      right: 7vw;
+      .rewards {
+        background-image: url(./assets/GameAssets/Tab2GameAssets/estimated-rewards-Base.png);
+        background-size: 100% 100%;
+        width: 18vw;
+        height: 6vw;
+        font-size: 2.5vw;
+        color: #1d470b;
+      }
+      img {
+        width: 12vw;
+      }
+    }
+    .fountain {
+      right: 0vw;
+      top: 40vw;
+      width: 35vw;
+    }
+    .building {
+      width: 55vw;
+      top: 20vw;
+    }
   }
   &-progress {
     font-size: 4vw;
@@ -1040,11 +1101,11 @@
   &-bottom {
     width: 90%;
     &-chances {
-      width: 60%;
+      background-image: url(./assets/Chances-Base.png);
+      background-size: 100% 100%;
+      width: 40%;
       color: #164d1c;
       .input {
-        background-image: url(./assets/Chances-Base.png);
-        background-size: 100% 100%;
         width: 40%;
         height: 9vw;
         background-color: transparent;
@@ -1064,8 +1125,8 @@
         }
       }
       .counter {
-        background-image: url(./assets/Chances-Counter.png);
-        background-size: 100% 100%;
+        // background-image: url(./assets/Chances-Counter.png);
+        // background-size: 100% 100%;
         width: 30%;
         height: 9vw;
         font-size: 4vw;
@@ -1086,12 +1147,12 @@
   background-image: url(./assets/Game-Section-Base.png);
   background-size: 100% 100%;
   width: 95%;
-  height: 100vw;
+  height: 115vw;
   padding: 5vw 2vw;
   &-area {
     border: 1px solid white;
     width: 95%;
-    height: 80vw;
+    height: 90vw;
     color: white;
   }
   &-bottom {

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import defeatIcon from "../../assets/Daily-Enemies-Defeated-Icon.png";
-import smallBomb from "../../assets/Small-Bomb.png";
-import landMine from "../../assets/Land-Mine.png";
-import superMine from "../../assets/Super-Mine.png";
-import startBtn from "../../assets/Start-Button.png";
-import plus from "../../assets/Plus.png";
-import filledBar from "../../assets/Filled-bar.png";
-function WarGame() {
+import { beanIcon, canon, defeatIcon, filledBar, fiveBoxes, hand, landMine, plus, smallBomb, soldier, startBtn, superMine } from "../../js/images";
+
+function WarGame({ dailyScores }) {
   const [values, setValues] = useState([1, 1, 1]);
-  const [selectBomb, setSelectBomb] = useState(0);
+  const [selectBomb, setSelectBomb] = useState(1);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [error, setError] = useState("Max value = 999");
+
+  const myChances = 10000;
 
   const handleIncrement = (index) => {
     const newValues = [...values];
@@ -20,63 +19,117 @@ function WarGame() {
     setSelectBomb(index);
   };
 
-  let inputValues;
-  if (selectBomb === 1) {
-    inputValues = values[0];
-  } else if (selectBomb === 2) {
-    inputValues = values[1];
-  } else {
-    inputValues = values[2];
-  }
+  const handleInput = (event, index) => {
+    let value = event.target.value;
+    let max = myChances < 999 ? myChances : 999;
+    let val = value.replace(/[^0-9]/g, "");
+    let number = parseInt(val) > max ? max : parseInt(val) <= 0 ? 1 : parseInt(val);
+
+    const newValues = [...values];
+    newValues[index] = number;
+    setValues(newValues);
+
+    if (event.target.value === "") {
+      setError("Enter some value");
+      setButtonDisabled(true);
+    } else if (
+      value === `${max}.0` ||
+      value === `${max}.00` ||
+      value === `${max}.000` ||
+      value === `${max}.0000` ||
+      value === `${max}.00000` ||
+      value === `${max}.000000` ||
+      value === `${max}.0000000` ||
+      value === `${max}.00000000` ||
+      value === `${max}.000000000` ||
+      value === `${max}.0000000000`
+    ) {
+      setError("Wrong input value");
+      setButtonDisabled(true);
+    } else {
+      setError("Max value = 999");
+      setButtonDisabled(false);
+    }
+  };
 
   return (
-    <div className="war-game m-auto d-flex fd-column al-center f-tangoItalic gap-2">
-      <div className="war-game-area d-flex al-center jc-center">Game animation</div>
-      <div className="war-game-progress d-flex fd-column al-center jc-s-even c-yellow">
-        War Victory Progress
-        <div className="progress-bar d-flex al-center jc-center">
+    <div className="war-game m-auto d-flex fd-column al-center f-tangoItalic gap-4">
+      <div className="war-game-battleField fd-column d-flex al-center jc-center p-rel">
+        <div className="soldiers d-flex al-center jc-s-even p-abs">
+          <img src={soldier} alt="" />
+          <img src={soldier} alt="" />
+          <img src={soldier} alt="" />
+          <img src={soldier} alt="" />
+          <img src={soldier} alt="" />
+        </div>
+        <div className="plus p-abs">
+          <img src={fiveBoxes} alt="" />
+        </div>
+        <img className="hand p-abs" src={hand} alt="" />
+        <div className="canon p-abs">
+          <img src={canon} alt="" />
+        </div>
+      </div>
+      <div className="war-game-progress d-flex fd-column al-center jc-s-even">
+        <div className="text fw-bold"> War Victory Progress</div>
+        <div className="progress-bar d-flex al-center jc-center gap-2">
           <div className="bar d-flex al-center jc-start p-rel">
             <img src={filledBar} alt="" />
             <span className="count p-abs">10/20</span>
           </div>
-          <span className="c-yellow">2000</span>
+          <div className="d-flex al-center jc-center">
+            <span>2000</span>
+            <img className="w-5vw h-5vw" src={beanIcon} alt="" />
+          </div>
         </div>
       </div>
       <div className="btn-area d-flex al-center jc-center">
         <div className="select-img d-flex al-center jc-s-even">
-          <div className="box d-flex fd-column al-center jc-center gap-1">
+          <div
+            className={
+              selectBomb === 1 ? "box d-flex fd-column al-center jc-center gap-1 gray-0" : "box d-flex fd-column al-center jc-center gap-1 gray-1"
+            }
+          >
             <span className="c-yellow">Small Bomb</span>
             <div className="bomb d-flex al-center jc-center">
-              <img className={selectBomb === 1 ? "gray-0" : "gray-1"} src={smallBomb} onClick={() => handleBomb(1)} alt="Small Bomb" />
+              <img src={smallBomb} onClick={() => handleBomb(1)} alt="Small Bomb" />
             </div>
             <div className="input-counter d-flex al-center jc-center gap-1">
-              <input type="number" value={values[0]} />
+              <input type="number" value={values[0]} onChange={(event) => handleInput(event, 0)} />
               <button onClick={() => handleIncrement(0)}>
                 <img src={plus} alt="Plus" />
               </button>
             </div>
             <span>10k Pts Req</span>
           </div>
-          <div className="box d-flex fd-column al-center jc-center gap-1">
+          <div
+            className={
+              selectBomb === 2 ? "box d-flex fd-column al-center jc-center gap-1 gray-0" : "box d-flex fd-column al-center jc-center gap-1 gray-1"
+            }
+          >
             <span className="c-yellow">Land Mine</span>
             <div className="bomb d-flex al-center jc-center">
-              <img className={selectBomb === 2 ? "gray-0" : "gray-1"} src={landMine} onClick={() => handleBomb(2)} alt="Land Mine" />
+              <img src={landMine} onClick={() => handleBomb(2)} alt="Land Mine" />
             </div>
             <div className="input-counter d-flex al-center jc-center gap-1">
-              <input type="number" value={values[1]} />
+              <input type="number" value={values[1]} onChange={(event) => handleInput(event, 1)} />
               <button onClick={() => handleIncrement(1)}>
                 <img src={plus} alt="Plus" />
               </button>
             </div>
             <span>20k Pts Req</span>
           </div>
-          <div className="box d-flex fd-column al-center jc-center gap-1">
+          <div
+            className={
+              selectBomb === 3 ? "box d-flex fd-column al-center jc-center gap-1 gray-0" : "box d-flex fd-column al-center jc-center gap-1 gray-1"
+            }
+          >
             <span className="c-yellow">Super Mine</span>
             <div className="bomb d-flex al-center jc-center">
-              <img className={selectBomb === 3 ? "gray-0" : "gray-1"} src={superMine} onClick={() => handleBomb(3)} alt="Super Mine" />
+              <img src={superMine} onClick={() => handleBomb(3)} alt="Super Mine" />
             </div>
             <div className="input-counter d-flex al-center jc-center gap-1">
-              <input type="number" value={values[2]} />
+              <input type="number" value={values[2]} onChange={(event) => handleInput(event, 2)} />
               <button onClick={() => handleIncrement(2)}>
                 <img src={plus} alt="Plus" />
               </button>
@@ -90,7 +143,7 @@ function WarGame() {
       </div>
       <div className="score-counter d-flex al-center jc-center gap-1">
         <img src={defeatIcon} alt="" />
-        <span>Daily Enemies Defeated: xx</span>
+        <span>Daily Enemies Defeated: {dailyScores ? dailyScores : 0}</span>
       </div>
     </div>
   );

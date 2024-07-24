@@ -27,6 +27,7 @@ function TopWinners({ userName, userScore, userAvatar, userId, index, userLevel,
     }
   }
   let rank = index + 1;
+
   return (
     <div className="innerData p-rel f-tangoItalic">
       <div className="rank p-abs">{rank}.</div>
@@ -36,14 +37,14 @@ function TopWinners({ userName, userScore, userAvatar, userId, index, userLevel,
           <img className="rank-border-image p-rel" src={frame1} alt="" />
         </a>
       </div>
-      <div className="bottom-data">
-        <div className="bottom-info">
+      <div className="bottom-data d-flex fd-column al-center jc-center">
+        <div className="bottom-info d-flex fd-column al-center jc-center gap-2">
           <div className="username">{userName && userName.slice(0, 10)}</div>
           <img style={subTabs.Talents ? { width: "7vw" } : { width: "12vw" }} src={levelUrl + level + ".png"} alt="" />
         </div>
         <div className="score-box d-flex fd-column al-center">
           <div className="points d-flex al-center jc-center gap-1">
-            <img style={{ width: "7vw", height: "7vw" }} src={icon} alt="" />
+            <img style={{ width: "6vw", height: "6vw" }} src={icon} alt="" />
             <span> {userScore}</span>
           </div>
           {eventGifting ? null : (
@@ -52,6 +53,7 @@ function TopWinners({ userName, userScore, userAvatar, userId, index, userLevel,
               <div className="d-flex al-center jc-center">
                 <img style={{ width: "5vw", height: "5vw" }} src={beanIcon} alt="" />
                 <span>{estBeans(beansPot, rank)}</span>
+                {/* <span>dummy value</span> */}
               </div>
             </div>
           )}
