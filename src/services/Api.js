@@ -23,16 +23,16 @@ function EventProvider({ children }) {
   };
   useEffect(() => {
     try {
-      // window.phone.getUserInfo(function (userInfo) {
-      //   setUser({
-      //     uid: userInfo.userId > 0 ? userInfo.userId : 0,
-      //     token: userInfo.token !== "" ? userInfo.token : null,
-      //   });
-      // });
-      setUser({
-        uid: 596492376,
-        token: "A1F86842C950814D7F8EAA779028066D27",
+      window.phone.getUserInfo(function (userInfo) {
+        setUser({
+          uid: userInfo.userId > 0 ? userInfo.userId : 0,
+          token: userInfo.token !== "" ? userInfo.token : null,
+        });
       });
+      // setUser({
+      //   uid: 596492376,
+      //   token: "A1F86842C950814D7F8EAA779028066D27",
+      // });
     } catch (_error) {
       setUser({
         uid: 0,

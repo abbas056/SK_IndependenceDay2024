@@ -20,6 +20,11 @@ import building4 from "../assets/GameAssets/Tab2GameAssets/Building4.png";
 import building5 from "../assets/GameAssets/Tab2GameAssets/Building5.png";
 import building6 from "../assets/GameAssets/Tab2GameAssets/Building6.png";
 import fountain from "../assets/GameAssets/Tab2GameAssets/Beans-Fountain.png";
+import baloons from "../assets/GameAssets/Tab3GameAssets/Balloons.png";
+import firecrackers1 from "../assets/GameAssets/Tab3GameAssets/Firecrackers1.png";
+import firecrackers2 from "../assets/GameAssets/Tab3GameAssets/Firecrackers2.png";
+import mascot1 from "../assets/GameAssets/Tab3GameAssets/Mascot1.png";
+import Mascot2 from "../assets/GameAssets/Tab3GameAssets/Mascot2.png";
 
 export {
   defeatIcon,
@@ -44,4 +49,9 @@ export {
   building5,
   building6,
   fountain,
+  baloons,
+  firecrackers1,
+  firecrackers2,
+  mascot1,
+  Mascot2,
 };
