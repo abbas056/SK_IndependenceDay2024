@@ -3,9 +3,11 @@ import {
   beanIcon,
   canon,
   defeatIcon,
+  enemiesDefeatIcon,
   filledBar,
   fiveBoxes,
   hand,
+  jashanPointsIcon,
   landMine,
   nineBoxes,
   oneBox,
@@ -14,12 +16,15 @@ import {
   soldier,
   startBtn,
   superMine,
+  warGif1,
+  warGif2,
+  warGif3,
 } from "../../js/images";
-import { callingApi, cross, overFlowAuto, overFlowHidden, success, unsuccess } from "../../js/helpers";
+import { callingApi, cross, overFlowAuto, overFlowHidden, rewardImages, success, unsuccess } from "../../js/helpers";
 import { baserUrl } from "../../js/baserUrl";
 import { ApiContext } from "../../services/Api";
 
-function WarGame({ dailyScores }) {
+function WarGame({ dailyScores, gamePoints, totalScores }) {
   const [values, setValues] = useState([1, 1, 1]);
   const [selectBomb, setSelectBomb] = useState(1);
   const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -28,22 +33,22 @@ function WarGame({ dailyScores }) {
   const [popup, setPopup] = useState([]);
   const [oops, setOops] = useState(false);
   const { refreshApi, userId, userToken } = useContext(ApiContext);
-
-  const myChances = 10000;
+  const [animation, setanimation] = useState();
 
   const handleIncrement = (index) => {
     const newValues = [...values];
     newValues[index] += 1;
     setValues(newValues);
   };
-
+  const maxScore = 2000;
+  const widthPercentage = Math.min((totalScores / maxScore) * 100, 100);
   const handleBomb = (index) => {
     setSelectBomb(index);
   };
 
   const handleInput = (event, index) => {
     let value = event.target.value;
-    let max = myChances < 999 ? myChances : 999;
+    let max = gamePoints < 999 ? gamePoints : 999;
     let val = value.replace(/[^0-9]/g, "");
     let number = parseInt(val) > max ? max : parseInt(val) <= 0 ? 1 : parseInt(val);
 
@@ -90,20 +95,66 @@ function WarGame({ dailyScores }) {
     callingApi(`${baserUrl}api/activity/independence/pak/battleField?playCount=${playCount}&type=${type}`, userId, userToken)
       .then(function (response) {
         if (response.msg === "success") {
+          const successTime = response?.data?.successTimes;
+          const winScore = successTime;
+          const lossScore = playCount - successTime;
+          if (successTime === 0) {
+            setanimation(warGif1);
+          } else if (successTime === 1) {
+            setanimation(warGif2);
+          } else {
+            setanimation(warGif3);
+          }
           setTimeout(() => {
             setAlert(true);
             setPopup(
               success(
                 <div className="d-flex fd-column jc-center al-center gap-2">
-                  <div className="head-text f-chewy p-abs">Congratulations!</div>
-                  Success
+                  <div className="head-text f-chewy p-abs">{successTime === 0 ? "Defeat!" : successTime === 1 ? "Victory!" : "Amazing Battle"}</div>
+                  {successTime === 0 ? (
+                    <span>It looks like you have lost the battle this time, here’s a reward for your effort, you have won</span>
+                  ) : successTime === 1 ? (
+                    <span>
+                      You have successfully defeated {winScore}{" "}
+                      <img style={{ width: "5vw", verticalAlign: "middle" }} src={enemiesDefeatIcon} alt="" /> & have won
+                    </span>
+                  ) : (
+                    <span>
+                      That was a great battle! You have successfully defeated {winScore} & lost {lossScore} battles, you have won
+                    </span>
+                  )}
+                  <div
+                    className={
+                      response?.data?.rewardList.length > 6 ? "rews-box rews-box-max d-flex al-start jc-center" : "rews-box d-flex al-start jc-center"
+                    }
+                  >
+                    {response?.data?.rewardList.map((item, index) => {
+                      return (
+                        <div className="d-flex al-center jc-center fd-column gap-1" key={index} style={{ width: "30%" }}>
+                          <div className="reward-img d-flex al-center jc-center">
+                            <img src={rewardImages(item?.desc)} alt="" />
+                          </div>
+                          <div className="name f-bold">
+                            <div>{item.desc}</div>x{" "}
+                            {item?.desc == "Beans" || item?.desc == "Gems" ? (
+                              item?.count
+                            ) : (
+                              <>
+                                {item.count} {item.count === 1 ? "day" : "days"}
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               )
             );
             overFlowHidden();
             setOops(false);
             refreshApi();
-          }, 1500);
+          }, 5000);
         } else if (response.msg === "POINT_NOT_ENOUGH") {
           setOops(true);
           setAlert(true);
@@ -111,7 +162,10 @@ function WarGame({ dailyScores }) {
             unsuccess(
               <div className="d-flex fd-column jc-center al-center gap-2">
                 <div className="head-text f-chewy p-abs">Oops!</div>
-                <div>You don't have enough Talent points right now, receive more event gifts & come back again.</div>
+                <div>
+                  You don’t have enough Jashan Points <img style={{ width: "5vw", verticalAlign: "middle" }} src={jashanPointsIcon} alt="" /> for the
+                  battle right now, send more event gifts & come back again.
+                </div>
               </div>
             )
           );
@@ -151,11 +205,13 @@ function WarGame({ dailyScores }) {
     setOops(false);
     setSelectBomb(1);
     setValues([1, 1, 1]);
+    setanimation();
   };
   return (
     <>
       <div className="war-game m-auto d-flex fd-column al-center f-tangoItalic gap-4">
         <div className="war-game-battleField fd-column d-flex al-center jc-center p-rel">
+          <img className="animation p-abs" src={animation} alt="" />
           <div className="soldiers d-flex al-center jc-s-even p-abs">
             <img src={soldier} alt="" />
             <img src={soldier} alt="" />
@@ -184,8 +240,10 @@ function WarGame({ dailyScores }) {
           <div className="text fw-bold"> War Victory Progress</div>
           <div className="progress-bar d-flex al-center jc-center gap-2">
             <div className="bar d-flex al-center jc-start p-rel">
-              <img src={filledBar} alt="" />
-              <span className="count p-abs">10/20</span>
+              <img style={{ width: `${widthPercentage}%` }} src={filledBar} alt="" />
+              <span className="count p-abs">
+                {totalScores ? totalScores : 0}/{maxScore}
+              </span>
             </div>
             <div className="d-flex al-center jc-center">
               <span>2000</span>
@@ -202,11 +260,13 @@ function WarGame({ dailyScores }) {
             >
               <span className="c-yellow">Small Bomb</span>
               <div className="bomb d-flex al-center jc-center">
-                <img src={smallBomb} onClick={() => handleBomb(1)} alt="Small Bomb" />
+                <button onClick={() => handleBomb(1)} disabled={buttonDisabled}>
+                  <img src={smallBomb} alt="Small Bomb" />
+                </button>
               </div>
               <div className="input-counter d-flex al-center jc-center gap-1">
                 <input type="number" value={values[0]} onChange={(event) => handleInput(event, 0)} />
-                <button onClick={() => handleIncrement(0)}>
+                <button onClick={() => handleIncrement(0)} disabled={buttonDisabled}>
                   <img src={plus} alt="Plus" />
                 </button>
               </div>
@@ -219,11 +279,13 @@ function WarGame({ dailyScores }) {
             >
               <span className="c-yellow">Land Mine</span>
               <div className="bomb d-flex al-center jc-center">
-                <img src={landMine} onClick={() => handleBomb(2)} alt="Land Mine" />
+                <button onClick={() => handleBomb(2)} disabled={buttonDisabled}>
+                  <img src={landMine} alt="Land Mine" />
+                </button>
               </div>
               <div className="input-counter d-flex al-center jc-center gap-1">
                 <input type="number" value={values[1]} onChange={(event) => handleInput(event, 1)} />
-                <button onClick={() => handleIncrement(1)}>
+                <button onClick={() => handleIncrement(1)} disabled={buttonDisabled}>
                   <img src={plus} alt="Plus" />
                 </button>
               </div>
@@ -236,11 +298,13 @@ function WarGame({ dailyScores }) {
             >
               <span className="c-yellow">Super Mine</span>
               <div className="bomb d-flex al-center jc-center">
-                <img src={superMine} onClick={() => handleBomb(3)} alt="Super Mine" />
+                <button onClick={() => handleBomb(3)} disabled={buttonDisabled}>
+                  <img src={superMine} alt="Super Mine" />
+                </button>
               </div>
               <div className="input-counter d-flex al-center jc-center gap-1">
                 <input type="number" value={values[2]} onChange={(event) => handleInput(event, 2)} />
-                <button onClick={() => handleIncrement(2)}>
+                <button onClick={() => handleIncrement(2)} disabled={buttonDisabled}>
                   <img src={plus} alt="Plus" />
                 </button>
               </div>
@@ -269,8 +333,8 @@ function WarGame({ dailyScores }) {
             <div className="game-popup d-flex al-center jc-center f-tangoItalic">
               {popup?.map((item, i) => {
                 return (
-                  <div className="container p-rel d-flex al-center jc-center " key={i} style={oops ? { height: "70vw" } : { height: "110vw" }}>
-                    <div className="content m-auto p-abs d-flex al-center jc-center" style={oops ? { height: "50vw" } : { height: "90vw" }}>
+                  <div className="container p-rel d-flex al-center jc-center " key={i} style={oops ? { height: "70vw" } : { height: "100vw" }}>
+                    <div className="content m-auto p-abs d-flex al-center jc-center" style={oops ? { height: "50vw" } : { height: "80vw" }}>
                       <div className="body-text d-flex al-center jc-center fd-column">{item.data}</div>
                     </div>
                     <div className="modal-close p-abs" onClick={close}>

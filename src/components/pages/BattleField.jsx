@@ -21,6 +21,7 @@ function BattleField({ tab1 }) {
   let overallGems = userInfo?.beansPotInfo?.OVERALL_GEMS;
   let gamePoints = userInfo?.gamePoints;
   let dailyScores = userInfo?.dailyScores;
+  let totalScores = userInfo?.totalScores;
 
   let beansPot;
   let winners;
@@ -38,7 +39,7 @@ function BattleField({ tab1 }) {
   return (
     <div>
       <MyPoints icon={pontsIcon} text="My Jashan Points: " points={gamePoints} />
-      <WarGame dailyScores={dailyScores} />
+      <WarGame dailyScores={dailyScores} gamePoints={gamePoints} totalScores={totalScores ? totalScores : 0} />
       <Tab1Rewards overallBeans={overallBeans} />
       <LeaderBoard
         tab1={tab1}

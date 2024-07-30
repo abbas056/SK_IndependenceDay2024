@@ -2,6 +2,7 @@ import axios from "axios";
 import unknown from "../assets/unknown.png";
 import crossBtn from "../assets/cross.png";
 import { baserUrl } from "./baserUrl";
+import { building1, building2, building3, building4, building5, building6 } from "./images";
 
 let env = 1;
 const currentDate = new Date();
@@ -118,7 +119,7 @@ export function rewardImages(desc) {
     rewImg = baserUrl + "streamkar/rewards/safariDesertframe.png";
   } else if (desc == "Dare Devil frame (NEW)") {
     rewImg = baserUrl + "streamkar/rewards/dareDevilFrame.png";
-  } else if (desc == "solar flare entrance" || desc == "solar flare Entrance") {
+  } else if (desc == "Solar Flare entrance" || desc == "solar flare Entrance") {
     rewImg = baserUrl + "streamkar/rewards/solar.png";
   } else if (desc == "Love frame") {
     rewImg = baserUrl + "streamkar/rewards/loveFrame.png";
@@ -130,15 +131,15 @@ export function rewardImages(desc) {
     rewImg = baserUrl + "streamkar/rewards/titanFrame.png";
   } else if (desc == "Celebration room skin") {
     rewImg = baserUrl + "streamkar/rewards/celeberationRoomskin.png";
-  } else if (desc == "Celebration frame") {
+  } else if (desc == "Celebration Frame") {
     rewImg = baserUrl + "streamkar/rewards/celebrationFrame.png";
-  } else if (desc == "Doyen frame") {
+  } else if (desc == "Doyen Frame") {
     rewImg = baserUrl + "streamkar/rewards/doyenFrame.png";
   } else if (desc == "Doyen room skin") {
     rewImg = baserUrl + "streamkar/rewards/doyenRoomskin.png";
   } else if (desc == "Spaceship entrance") {
     rewImg = baserUrl + "streamkar/rewards/spaceship.png";
-  } else if (desc == "Sea Wolf room skin") {
+  } else if (desc == "Sea wolf room skin") {
     rewImg = baserUrl + "streamkar/rewards/seaWolfRoomSkin.png";
   } else if (desc == "Beans" || desc == "beans") {
     rewImg = baserUrl + "streamkar/rewards/beanbag.png";
@@ -148,9 +149,9 @@ export function rewardImages(desc) {
     rewImg = baserUrl + "streamkar/rewards/goldRushRoomTheme.png";
   } else if (desc == "Eid Mubarak room skin") {
     rewImg = baserUrl + "streamkar/rewards/eidMubarakRoomSkin.png";
-  } else if (desc == "Peacemaker frame") {
+  } else if (desc == "Peacemaker Frame") {
     rewImg = baserUrl + "streamkar/rewards/peacemakerFrame.png";
-  } else if (desc == "Victory slide entrance") {
+  } else if (desc == "Victory Slide entrance") {
     rewImg = baserUrl + "streamkar/rewards/victorySlide.png";
   } else if (desc == "Lonewolf entrance") {
     rewImg = baserUrl + "streamkar/rewards/loneWolf.png";
@@ -170,7 +171,7 @@ export function rewardImages(desc) {
     rewImg = baserUrl + "streamkar/rewards/glory-frame.png";
   } else if (desc == "Monarch entrance") {
     rewImg = baserUrl + "streamkar/rewards/monarch.png";
-  } else if (desc == "Monarch frame") {
+  } else if (desc == "Monarch frame" || desc == "Monarch Frame") {
     rewImg = baserUrl + "streamkar/rewards/monarchProfileFrame.png";
   } else if (desc == "Pirate Ship entrance") {
     rewImg = baserUrl + "streamkar/rewards/pirateShip.png";
@@ -196,7 +197,39 @@ export function rewardImages(desc) {
     rewImg = baserUrl + "streamkar/rewards/mysterioFrame.png";
   } else if (desc == "Desire room skin") {
     rewImg = baserUrl + "streamkar/rewards/desireRoomSkin.png";
-  } else if (desc == "no") {
+  } else if (desc == "Bumblebee entrance") {
+    rewImg = baserUrl + "streamkar/rewards/bumblebee.png";
+  } else if (desc == "Conqueror Frame") {
+    rewImg = baserUrl + "streamkar/rewards/conquerorFrame.png";
+  } else if (desc == "Freedom Room Skin") {
+    rewImg = baserUrl + "streamkar/rewards/freedomRoomSkin.png";
+  } else if (desc == "Freedom Frame") {
+    rewImg = baserUrl + "streamkar/rewards/freedomFrame.png";
+  } else if (desc == "Conqueror Room Skin") {
+    rewImg = baserUrl + "streamkar/rewards/conquerorRoomSkin.png";
+  } else if (desc == "War Hero Frame(New)") {
+    rewImg = baserUrl + "streamkar/rewards/warHeroFrame.png";
+  } else if (desc == "War Hero room skin(New)") {
+    rewImg = baserUrl + "streamkar/rewards/warHeroRoomSkin.png";
+  } else if (desc == "Stadium room skin") {
+    rewImg = baserUrl + "streamkar/rewards/stadiumAudioTheme.png";
+  } else if (desc == "Azaadi Frame") {
+    rewImg = baserUrl + "streamkar/rewards/azadiFrame.png";
+  } else if (desc == "Azaadi room skin") {
+    rewImg = baserUrl + "streamkar/rewards/azadiRoomskin.png";
+  } else if (desc == "Blazing Frame") {
+    rewImg = baserUrl + "streamkar/rewards/blazingFrame.png";
+  } else if (desc == "Boss room skin") {
+    rewImg = baserUrl + "streamkar/rewards/bossRoomSkin.png";
+  } else if (desc == "Victorious room skin") {
+    rewImg = baserUrl + "streamkar/rewards/victoriousRoomSkin.png";
+  } else if (desc == "Freedom room skin") {
+    rewImg = baserUrl + "streamkar/rewards/freedomRoomSkin.png";
+  } else if (desc == "Night shadow room skin") {
+    rewImg = baserUrl + "streamkar/rewards/nightShadow.png";
+  } else if (desc == "Moon Knight Frame") {
+    rewImg = baserUrl + "streamkar/rewards/moonKnightFrame.png";
+  } else {
     rewImg = baserUrl + "streamkar/rewards/noRew.png";
   }
   return rewImg;
@@ -250,3 +283,22 @@ export function goTo(isLive, userId, roomId) {
     window.location.href = "http://www.kktv1.com/m/?roomid=" + userId + "";
   }
 }
+export const buildings = (level) => {
+  let building;
+  if (level === 1) {
+    building = building1;
+  } else if (level === 2) {
+    building = building2;
+  } else if (level === 3) {
+    building = building3;
+  } else if (level === 4) {
+    building = building4;
+  } else if (level === 5) {
+    building = building5;
+  } else if (level === 6) {
+    building = building6;
+  } else {
+    building = null;
+  }
+  return building;
+};

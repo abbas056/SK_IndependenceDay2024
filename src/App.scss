@@ -29,12 +29,21 @@
 //..........//
 .header {
   width: 100%;
+  height: 100vw;
   object-fit: cover;
-  img {
+  // img {
+  //   width: 100%;
+
+  // }
+  .baloons {
+    margin-top: -12vw;
+    z-index: 1;
+    position: relative;
+  }
+  .header-svga {
     width: 100%;
-    &:last-child {
-      margin-top: -12vw;
-    }
+    height: 100%;
+    overflow: hidden;
   }
 }
 .language-dropdown {
@@ -81,6 +90,7 @@
   }
 }
 .tab-buttons {
+  margin-top: 12vw;
   width: 100%;
   button {
     width: 33%;
@@ -244,6 +254,106 @@
     top: 10vw;
   }
 }
+.records-popup {
+  background-image: url(./assets/Popups/other-popups/Details-Bg.png);
+  background-size: 100% 100%;
+  width: 95%;
+  max-height: 120vw;
+  min-height: 50vw;
+  padding: 10vw 0;
+  color: white;
+  margin-top: 25vw;
+  .title {
+    background-image: url(./assets/Popups/other-popups/Title-base.png);
+    background-size: 100% 100%;
+    width: 60%;
+    padding-top: 2vw;
+    height: 22vw;
+    font-size: 10vw;
+    left: 0;
+    right: 0;
+    top: -20vw;
+    text-shadow: 0px 2px #000000b8;
+  }
+  .inner-content {
+    width: 90%;
+    margin: 0 auto;
+    padding: 7vw 0 0 0;
+    .table {
+      width: 100%;
+      overflow: hidden;
+      font-size: 2.5vw;
+      td {
+        padding: 3vw 0;
+      }
+      .heading {
+        width: 100%;
+        background-color: #e37820;
+        height: 12vw;
+        margin: 0 auto;
+        color: white;
+      }
+      .table-data {
+        width: 100%;
+        max-height: 95vw;
+        overflow-y: scroll;
+        .content {
+          width: 100%;
+          background-color: #06531c;
+          color: white;
+        }
+      }
+      .table-data::-webkit-scrollbar {
+        background-color: #ffffff;
+        background-size: 100% 100%;
+        width: 0.1vw;
+      }
+      .table-data::-webkit-scrollbar-track {
+        background-color: white;
+        border-radius: 10px;
+      }
+      .table-data::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #751a20;
+        background-size: 100% 100%;
+        width: 5vw;
+        height: 5vw;
+      }
+      .rews {
+        .rew-img {
+          width: 9vw;
+          height: 9vw;
+          img {
+            width: 8vw;
+          }
+        }
+        .desc {
+          font-size: 1.8vw;
+        }
+      }
+    }
+    .see-btn {
+      background-color: green;
+      width: 20vw;
+      margin: auto;
+      padding: 2vw;
+      margin-top: 2vw;
+      border: 1.5px solid #ffac2f;
+      border-radius: 5vw;
+      button {
+        color: white;
+        margin: 0 auto;
+        img {
+          width: 20vw;
+        }
+      }
+    }
+  }
+  .close {
+    right: 3vw;
+    top: -15vw;
+  }
+}
 .event-gifts {
   background-image: url(./assets/Popups/other-popups/Event-Gifts-Bg.png);
   background-size: 100% 100%;
@@ -304,6 +414,10 @@
     width: 100%;
     height: 110vw;
     color: white;
+    .animation {
+      z-index: 2;
+      width: 97%;
+    }
     .soldiers {
       width: 50%;
       top: 16vw;
@@ -329,7 +443,7 @@
     font-size: 3vw;
     color: #fec723;
     margin-top: -15vw;
-    z-index: 1;
+    z-index: 2;
     .text {
       background-color: #044623;
       border: 1.5px solid #fec723;
@@ -347,7 +461,6 @@
         padding: 0 1vw;
         img {
           height: 3.5vw;
-          width: 83%;
           border-radius: 5vw 0 0 5vw;
         }
         .count {
@@ -1055,12 +1168,18 @@
     }
     .fountain {
       right: 0vw;
-      top: 40vw;
-      width: 35vw;
+      bottom: 2vw;
+      width: 47vw;
+    }
+    .effect {
+      width: 70%;
+      z-index: 1;
+      left: 10vw;
     }
     .building {
-      width: 55vw;
-      top: 20vw;
+      width: 50vw;
+      bottom: 19vw;
+      left: 15vw;
     }
   }
   &-progress {
@@ -1081,7 +1200,6 @@
       padding: 0 1.5vw;
       img {
         border-radius: 5vw;
-        width: 60%;
         height: 6.5vw;
       }
       &-points {
@@ -1126,6 +1244,12 @@
         height: 9vw;
         font-size: 4vw;
       }
+      .error {
+        color: yellow;
+        margin: 0;
+        font-size: 2.8vw;
+        bottom: -4vw;
+      }
     }
     &-build-btn {
       img {
@@ -1150,6 +1274,13 @@
     width: 100%;
     height: 90vw;
     color: white;
+    .effect {
+      z-index: 1;
+      left: 0vw;
+      width: 90%;
+      right: 0;
+      margin: 0 auto;
+    }
     .mascot {
       bottom: 3vw;
       img {
@@ -1221,19 +1352,20 @@
     color: white;
     margin: 0 auto;
     .content {
-      width: 90%;
+      width: 100%;
       top: 12vw;
       .body-text {
         color: #075b23;
-        font-size: 4vw;
+        font-size: 3.5vw;
         width: 90%;
+        font-weight: bold;
         .head-text {
           background-image: url(./assets/Popups/game-popups/Title-base.png);
           background-size: 100% 100%;
-          width: 75%;
-          padding-top: 5vw;
+          width: 90%;
+          padding-top: 7vw;
           height: 16vw;
-          font-size: 10vw;
+          font-size: 9vw;
           left: 0;
           right: 0;
           top: -23vw;
@@ -1475,101 +1607,55 @@
   color: white;
   margin: 0;
 }
-.records-popup {
-  background-image: url(./assets/Popups/other-popups/Details-Bg.png);
+.btn-up {
+  width: 14vw;
+  position: fixed;
+  bottom: 15vw;
+  right: 4vw;
+  cursor: pointer;
+  z-index: 3;
+}
+.footer {
+  width: 100%;
+  height: 20vw;
+  p {
+    text-align: center;
+    font-size: 4vw;
+    color: white;
+    margin: 0;
+  }
+}
+.info-popup {
+  background-image: url(./assets/Popups/game-popups/Base-Box.png);
   background-size: 100% 100%;
-  width: 95%;
-  max-height: 120vw;
-  min-height: 50vw;
-  padding: 10vw 0;
+  width: 90%;
+  height: 60vw;
   color: white;
-  margin-top: 25vw;
-  .title {
-    background-image: url(./assets/Popups/other-popups/Title-base.png);
+  margin: 0 auto;
+  .head {
+    background-image: url(./assets/Popups//other-popups/Title-base.png);
     background-size: 100% 100%;
-    width: 60%;
-    padding-top: 2vw;
-    height: 22vw;
-    font-size: 10vw;
-    left: 0;
-    right: 0;
-    top: -20vw;
-    text-shadow: 0px 2px #000000b8;
-  }
-  .inner-content {
-    width: 90%;
+    width: 80%;
+    height: 20vw;
+    color: white;
     margin: 0 auto;
-    padding: 7vw 0;
-    .table {
-      width: 95%;
-      overflow: hidden;
-      font-size: 2.7vw;
-      border: 2px solid #721800;
-      td {
-        padding: 3vw 0;
-        border: 2px solid #721800;
-      }
-      .heading {
-        width: 100%;
-        background-color: #c3661c;
-        height: 12vw;
-        margin: 0 auto;
-        color: white;
-      }
-      .table-data {
-        width: 100%;
-        max-height: 90vw;
-        overflow-y: scroll;
-        .content {
-          width: 100%;
-          color: #751a20;
-          font-weight: bold;
-        }
-      }
-      .table-data::-webkit-scrollbar {
-        background-color: #ffffff;
-        background-size: 100% 100%;
-        width: 0.1vw;
-      }
-      .table-data::-webkit-scrollbar-track {
-        background-color: white;
-        border-radius: 10px;
-      }
-      .table-data::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background-color: #751a20;
-        background-size: 100% 100%;
-        width: 5vw;
-        height: 5vw;
-      }
-      .rews {
-        .rew-img {
-          width: 9vw;
-          height: 9vw;
-          img {
-            width: 8vw;
-          }
-        }
-        .desc {
-          font-size: 1.8vw;
-        }
-      }
-    }
-    .see-btn {
-      width: 20vw;
-      margin: auto;
-      padding: 2vw;
-      margin-top: 2vw;
-      button {
-        margin: 0 auto;
-        img {
-          width: 20vw;
-        }
-      }
-    }
+    top: -10vw;
+    font-size: 10vw;
+    text-shadow: 1px 2px 0px #e08c0f;
   }
-  .close {
-    right: 3vw;
-    top: -15vw;
+  .container {
+    .body-text {
+      color: #075b23;
+      font-size: 4vw;
+      width: 90%;
+    }
+    .modal-close {
+      top: -20vw;
+      width: 10vw;
+      right: 3vw;
+      img {
+        width: 100%;
+      }
+    }
   }
 }

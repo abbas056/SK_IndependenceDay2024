@@ -19,12 +19,20 @@ import building3 from "../assets/GameAssets/Tab2GameAssets/Building3.png";
 import building4 from "../assets/GameAssets/Tab2GameAssets/Building4.png";
 import building5 from "../assets/GameAssets/Tab2GameAssets/Building5.png";
 import building6 from "../assets/GameAssets/Tab2GameAssets/Building6.png";
-import fountain from "../assets/GameAssets/Tab2GameAssets/Beans-Fountain.png";
+import fountain from "../assets/GameAssets/Tab2GameAssets/Fountain.gif";
 import baloons from "../assets/GameAssets/Tab3GameAssets/Balloons.png";
 import firecrackers1 from "../assets/GameAssets/Tab3GameAssets/Firecrackers1.png";
 import firecrackers2 from "../assets/GameAssets/Tab3GameAssets/Firecrackers2.png";
 import mascot1 from "../assets/GameAssets/Tab3GameAssets/Mascot1.png";
 import Mascot2 from "../assets/GameAssets/Tab3GameAssets/Mascot2.png";
+import buildingIcon from "../assets/Popups/game-popups/Building-Icon.png";
+import jashanPointsIcon from "../assets/Popups/game-popups/jashan-Points-icon.png";
+import enemiesDefeatIcon from "../assets/Popups/game-popups/Enemies-Defeated-Icon.png";
+import warGif1 from "../assets/GameAssets/Tab1GameAssets/animations/1.gif";
+import warGif2 from "../assets/GameAssets/Tab1GameAssets/animations/2.gif";
+import warGif3 from "../assets/GameAssets/Tab1GameAssets/animations/3.gif";
+import buildingEffect from "../assets/GameAssets/Tab2GameAssets/animation/Building-Effect.gif";
+import firecrackerEffect from "../assets/GameAssets/Tab3GameAssets/animation/Firecracker-Game.gif";
 
 export {
   defeatIcon,
@@ -54,4 +62,12 @@ export {
   firecrackers2,
   mascot1,
   Mascot2,
+  buildingIcon,
+  jashanPointsIcon,
+  enemiesDefeatIcon,
+  warGif1,
+  warGif2,
+  warGif3,
+  buildingEffect,
+  firecrackerEffect,
 };

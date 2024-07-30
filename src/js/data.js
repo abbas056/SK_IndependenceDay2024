@@ -40,7 +40,7 @@ export const giftingTalnetrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
         desc: (
           <span>
             <span>War Hero frame (New) x5 days</span>
@@ -48,7 +48,7 @@ export const giftingTalnetrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
         desc: (
           <span>
             <span>War Hero room skin (New) x5 days</span>
@@ -74,7 +74,7 @@ export const giftingTalnetrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
         desc: (
           <span>
             <span>War Hero frame (New) x3 days</span>
@@ -82,7 +82,7 @@ export const giftingTalnetrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
         desc: (
           <span>
             <span>War Hero room skin (New) x3 days</span>
@@ -108,7 +108,7 @@ export const giftingTalnetrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
         desc: (
           <span>
             <span>War Hero frame (New) x1 day</span>
@@ -116,7 +116,7 @@ export const giftingTalnetrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
         desc: (
           <span>
             <span>War Hero room skin (New) x1 day</span>
@@ -140,7 +140,7 @@ export const giftingGifterrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
         desc: (
           <span>
             <span>War Hero frame (New) x5 days</span>
@@ -148,7 +148,7 @@ export const giftingGifterrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
         desc: (
           <span>
             <span>War Hero room skin (New) x5 days</span>
@@ -170,7 +170,7 @@ export const giftingGifterrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
         desc: (
           <span>
             <span>War Hero frame (New) x3 days</span>
@@ -178,7 +178,7 @@ export const giftingGifterrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
         desc: (
           <span>
             <span>War Hero room skin (New) x3 days</span>
@@ -200,7 +200,7 @@ export const giftingGifterrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
         desc: (
           <span>
             <span>War Hero frame (New) x1 days</span>
@@ -208,7 +208,7 @@ export const giftingGifterrewards = [
         ),
       },
       {
-        pic: `${baserUrl}streamkar/rewards/noRew.png`,
+        pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
         desc: (
           <span>
             <span>War Hero room skin (New) x1 days</span>
@@ -221,7 +221,7 @@ export const giftingGifterrewards = [
 export const eventGifts = [
   {
     id: 1,
-    img: `${baserUrl}streamkar/gifts/40011725.png`,
+    img: `${baserUrl}streamkar/gifts/jashneazadi-gift.png`,
     name: "Jashan e Azadi",
     cost: "40k",
   },
@@ -329,11 +329,11 @@ export const tab1Details = {
           text: "Moon Knight frame x2 days",
         },
         {
-          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
           text: "War Hero Frame x2 days (New)",
         },
         {
-          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
           text: "War Hero room skin x2 days (New)",
         },
         {
@@ -377,11 +377,11 @@ export const tab1Details = {
           text: "Monarch entrance x2 days",
         },
         {
-          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
           text: "War Hero Frame x2 days (New)",
         },
         {
-          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
           text: "War Hero room skin x2 days (New)",
         },
         {
@@ -428,11 +428,11 @@ export const tab2Details = {
           text: "Conqueror frame x1 Day",
         },
         {
-          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
           text: "War Hero Frame x2 days (New)",
         },
         {
-          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
           text: "War Hero room skin x2 days (New)",
         },
         {
@@ -483,11 +483,11 @@ export const tab3Details = {
           text: "1500 Gems",
         },
         {
-          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
           text: "War Hero Frame x2 days (New)",
         },
         {
-          pic: `${baserUrl}streamkar/rewards/noRew.png`,
+          pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
           text: "War Hero room skin x2 days (New)",
         },
       ],

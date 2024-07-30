@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import fireBtn from "../../assets/Fire-Button.png";
-import { baloons, firecrackers1, firecrackers2, mascot1, Mascot2 } from "../../js/images";
-import { callingApi, cross, overFlowAuto, overFlowHidden, success, unsuccess } from "../../js/helpers";
+import { baloons, firecrackerEffect, firecrackers1, firecrackers2, mascot1, Mascot2 } from "../../js/images";
+import { callingApi, cross, overFlowAuto, overFlowHidden, rewardImages, success, unsuccess } from "../../js/helpers";
 import { ApiContext } from "../../services/Api";
 import { baserUrl } from "../../js/baserUrl";
 function FireWorkGame() {
@@ -11,6 +11,7 @@ function FireWorkGame() {
   const [oops, setOops] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const { refreshApi, userId, userToken } = useContext(ApiContext);
+  const [animation, setanimation] = useState(false);
 
   const selectSpeed = (speed) => {
     setSpeed(speed);
@@ -21,28 +22,54 @@ function FireWorkGame() {
     callingApi(`${baserUrl}api/activity/independence/pak/talentFireworks?playCount=${speed}`, userId, userToken)
       .then(function (response) {
         if (response.msg === "success") {
+          setanimation(true);
           setTimeout(() => {
             setAlert(true);
             setPopup(
               success(
                 <div className="d-flex fd-column jc-center al-center gap-2">
                   <div className="head-text f-chewy p-abs">Congratulations!</div>
-                  Success
+                  <span>You have successfully fired up the crackers & have won & have won</span>
+                  <div
+                    className={
+                      response?.data?.rewardList.length > 6 ? "rews-box rews-box-max d-flex al-start jc-center" : "rews-box d-flex al-start jc-center"
+                    }
+                  >
+                    {response?.data?.rewardList.map((item, index) => {
+                      return (
+                        <div className="d-flex al-center jc-center fd-column gap-1" key={index} style={{ width: "30%" }}>
+                          <div className="reward-img d-flex al-center jc-center">
+                            <img src={rewardImages(item?.desc)} alt="" />
+                          </div>
+                          <div className="name f-bold">
+                            <div>{item.desc}</div>x{" "}
+                            {item?.desc == "Beans" || item?.desc == "Gems" ? (
+                              item?.count
+                            ) : (
+                              <>
+                                {item.count} {item.count === 1 ? "day" : "days"}
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               )
             );
             overFlowHidden();
             setOops(false);
             refreshApi();
-          }, 1500);
-        } else if (response.msg === "POINT_NOT_ENOUGH") {
+          }, 3000);
+        } else if (response.msg === "GAME_POINT_NOT_ENOUGH") {
           setOops(true);
           setAlert(true);
           setPopup(
             unsuccess(
               <div className="d-flex fd-column jc-center al-center gap-2">
                 <div className="head-text f-chewy p-abs">Oops!</div>
-                <div>You don't have enough Talent points right now, receive more event gifts & come back again.</div>
+                <div>You don’t have enough talent points right now, get more event gifts to get talent points and come back again.</div>
               </div>
             )
           );
@@ -81,11 +108,13 @@ function FireWorkGame() {
     setButtonDisabled(false);
     setOops(false);
     setSpeed(1);
+    setanimation(false);
   };
   return (
     <>
       <div className="firework-game m-auto d-flex fd-column al-center f-tangoItalic gap-2">
         <div className="firework-game-area d-flex al-center jc-center p-rel">
+          <img className="effect p-abs" style={animation ? { display: "block" } : { display: "none" }} src={firecrackerEffect} alt="" />
           <div className="mascot d-flex p-abs">
             <img src={baloons} alt="" />
             <img src={mascot1} alt="" />

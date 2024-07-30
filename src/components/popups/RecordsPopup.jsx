@@ -11,11 +11,9 @@ function RecordsPopup({ mainTabs, close, loadMore, isLoading, gameRecord }) {
           <div className="title f-hunter  m-auto d-flex al-center jc-center p-abs">Records</div>
           <div className="table m-auto d-flex jc-center al-start f-tangoItalic fd-column">
             <div className="heading d-flex f-bold">
-              <div className="border-1 d-flex  al-center jc-center" style={mainTabs.tab1 || mainTabs.tab2 ? { width: "30%" } : { width: "40%" }}>
-                Time (GMT)
-              </div>
-              {mainTabs.tab1 ? <div className="w-30 border-1 d-flex  al-center jc-center">Battle Results</div> : null}
-              <div className="w-60 border-1 d-flex  al-center jc-center">Rewards</div>
+              <div className="w-25 border-b d-flex  al-center jc-center bg-brown">Time (GMT)</div>
+              {mainTabs.tab1 ? <div className="w-25 border-b d-flex  al-center jc-center bg-brown">Battle Results</div> : null}
+              <div className="w-100 border-b d-flex  al-center jc-center bg-brown">Rewards</div>
             </div>
             {isLoading ? (
               <Loader />
@@ -34,35 +32,30 @@ function RecordsPopup({ mainTabs, close, loadMore, isLoading, gameRecord }) {
                       const lossScore = Math.floor(score % 1000);
                       return (
                         <div key={index} className="d-flex w-100">
-                          <div
-                            className="bg-sky-blue border-1 d-flex al-center bg-light-blue jc-center"
-                            style={mainTabs.tab1 || mainTabs.tab2 ? { width: "30%" } : { width: "40%" }}
-                          >
-                            {formattedDate}
-                          </div>
+                          <div className="w-25 border-b d-flex al-center  jc-center">{formattedDate}</div>
                           {mainTabs.tab1 ? (
-                            <div className="w-30 bg-sky-blue border-1 d-flex  al-center jc-center" style={{ whiteSpace: "pre-line" }}>
+                            <div className="w-25 border-b d-flex  al-center jc-center" style={{ whiteSpace: "pre-line" }}>
                               {mainTabs.tab1
                                 ? `${
                                     score === 1
-                                      ? "Loss"
+                                      ? "Failure"
                                       : score === 1000
-                                      ? "Win"
+                                      ? "Success"
                                       : winScore +
                                         " " +
-                                        `${winScore === 1 ? "Win" : "Wins"} ` +
+                                        `${winScore === 1 ? "Success" : "Success"} ` +
                                         "\n" +
                                         lossScore +
                                         " " +
-                                        `${lossScore === 1 ? "Loss" : "Losses"}`
+                                        `${lossScore === 1 ? "Failure" : "Failure"}`
                                   }`
                                 : `${score}`}
                             </div>
                           ) : null}
-                          <div className=" w-60 bg-sky-blue border-1 d-flex f-wrap bg-light-blue jc-center al-start  gap-1">
+                          <div className=" w-100  border-b d-flex f-wrap  jc-center al-start  gap-1">
                             {rewardDTOList?.map((obj, index) => {
                               return (
-                                <div key={index} className="rews d-flex al-center jc-center fd-column gap-1" style={{ width: "10vw" }}>
+                                <div key={index} className="rews d-flex al-center jc-center fd-column gap-1" style={{ width: "12vw" }}>
                                   <div className="rew-img d-flex al-center jc-center">
                                     <img src={rewardImages(obj.desc)} alt="" />
                                   </div>
