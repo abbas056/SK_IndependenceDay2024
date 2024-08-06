@@ -13,6 +13,7 @@ import oneBox from "../assets/GameAssets/Tab1GameAssets/1-Box.png";
 import fiveBoxes from "../assets/GameAssets/Tab1GameAssets/5-Boxes.png";
 import nineBoxes from "../assets/GameAssets/Tab1GameAssets/9-Boxes.png";
 import qaBtn from "../assets/GameAssets/Tab2GameAssets/Button.png";
+import building0 from "../assets/GameAssets/Tab2GameAssets/Building0.png";
 import building1 from "../assets/GameAssets/Tab2GameAssets/Building1.png";
 import building2 from "../assets/GameAssets/Tab2GameAssets/Building2.png";
 import building3 from "../assets/GameAssets/Tab2GameAssets/Building3.png";
@@ -28,11 +29,18 @@ import Mascot2 from "../assets/GameAssets/Tab3GameAssets/Mascot2.png";
 import buildingIcon from "../assets/Popups/game-popups/Building-Icon.png";
 import jashanPointsIcon from "../assets/Popups/game-popups/jashan-Points-icon.png";
 import enemiesDefeatIcon from "../assets/Popups/game-popups/Enemies-Defeated-Icon.png";
+import mineIcon from "../assets/Popups/game-popups/Mine-Icon.png";
 import warGif1 from "../assets/GameAssets/Tab1GameAssets/animations/1.gif";
 import warGif2 from "../assets/GameAssets/Tab1GameAssets/animations/2.gif";
 import warGif3 from "../assets/GameAssets/Tab1GameAssets/animations/3.gif";
 import buildingEffect from "../assets/GameAssets/Tab2GameAssets/animation/Building-Effect.gif";
+import mascotBuilderL from "../assets/GameAssets/Tab2GameAssets/animation/Mascot-Builder-L.gif";
+import mascotBuilderR from "../assets/GameAssets/Tab2GameAssets/animation/Mascot-Builder-R.gif";
 import firecrackerEffect from "../assets/GameAssets/Tab3GameAssets/animation/Firecracker-Game.gif";
+import rank1 from "../assets/rank-1.png";
+import rank2 from "../assets/rank-2.png";
+import rank3 from "../assets/rank-3.png";
+import fireworkAnimation from "../assets/GameAssets/Tab1GameAssets/animations/firework-animation.gif";
 
 export {
   defeatIcon,
@@ -50,6 +58,7 @@ export {
   fiveBoxes,
   nineBoxes,
   qaBtn,
+  building0,
   building1,
   building2,
   building3,
@@ -70,4 +79,11 @@ export {
   warGif3,
   buildingEffect,
   firecrackerEffect,
+  mineIcon,
+  mascotBuilderL,
+  mascotBuilderR,
+  rank1,
+  rank2,
+  rank3,
+  fireworkAnimation,
 };

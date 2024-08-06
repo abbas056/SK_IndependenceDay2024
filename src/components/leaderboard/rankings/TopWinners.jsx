@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import unknown from "../../../assets/unknown.png";
 import frame1 from "../../../assets/1st-Frame.png";
-import { captureImageError, estBeans } from "../../../js/helpers";
+import { captureImageError, estBeans, goTo } from "../../../js/helpers";
 import { baserUrl } from "../../../js/baserUrl";
 import beanIcon from "../../../assets/bean.png";
 import enemiesIcon from "../../../assets/Daily-Enemies-Defeated-Icon.png";
 import gemIcon from "../../../assets/gems.png";
+import { ApiContext } from "../../../services/Api";
+import { rank1, rank2, rank3 } from "../../../js/images";
 
 function TopWinners({ userName, userScore, userAvatar, userId, index, userLevel, actorLevel, tab1, beansPot, subTabs, eventGifting }) {
+  const { isLive } = useContext(ApiContext);
+
   let levelUrl;
   let level;
   let icon;
@@ -30,12 +34,18 @@ function TopWinners({ userName, userScore, userAvatar, userId, index, userLevel,
 
   return (
     <div className="innerData p-rel f-tangoItalic">
-      <div className="rank p-abs">{rank}.</div>
+      <div className="rank p-abs">
+        <img src={rank === 1 ? rank1 : rank === 2 ? rank2 : rank3} alt="" />
+      </div>
       <div className={rank == 1 ? "first-user" : "runner-user"}>
-        <img onError={captureImageError} className="rank-user-image" src={userAvatar ? userAvatar : unknown} alt="" />
-        <a href={`http://www.kktv1.com/m/?roomid=${userId}`}>
+        <div
+          onClick={() => {
+            goTo(isLive, userId, userId);
+          }}
+        >
+          <img onError={captureImageError} className="rank-user-image" src={userAvatar ? userAvatar : unknown} alt="" />
           <img className="rank-border-image p-rel" src={frame1} alt="" />
-        </a>
+        </div>
       </div>
       <div className="bottom-data d-flex fd-column al-center jc-center">
         <div className="bottom-info d-flex fd-column al-center jc-center gap-2">
@@ -49,7 +59,7 @@ function TopWinners({ userName, userScore, userAvatar, userId, index, userLevel,
           </div>
           {eventGifting ? null : (
             <div className="estimated p-abs d-flex al-center jc-center">
-              <span>Est Beans:</span>
+              <span>{subTabs.Today ? "Est Beans:" : "Beans Won:"}</span>
               <div className="d-flex al-center jc-center">
                 <img style={{ width: "5vw", height: "5vw" }} src={beanIcon} alt="" />
                 <span>{estBeans(beansPot, rank)}</span>

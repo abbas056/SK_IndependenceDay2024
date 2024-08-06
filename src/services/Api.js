@@ -14,29 +14,29 @@ function EventProvider({ children }) {
   const [beansReceived, setBeansReceived] = useState([]);
   const [dailyScoreToday, setDailyScoreToday] = useState([]);
   const [dailyScorePrevious, setDailyScorePrevious] = useState([]);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
   const [user, setUser] = useState({
     uid: 0,
     token: undefined,
   });
+  const isLive = false;
+
   const refreshApi = () => {
     setRefresh(!refresh);
   };
   useEffect(() => {
     try {
-      // window.phone.getUserInfo(function (userInfo) {
-      //   setUser({
-      //     uid: userInfo.userId > 0 ? userInfo.userId : 0,
-      //     token: userInfo.token !== "" ? userInfo.token : null,
-      //   });
-      // });
-      setUser({
-        uid: 596492376,
-        token: "A1F86842C950814D7F8EAA779028066D27",
+      window.phone.getUserInfo(function (userInfo) {
+        setUser({
+          uid: userInfo.userId > 0 ? userInfo.userId : 0,
+          token: userInfo.token !== "" ? userInfo.token : null,
+        });
       });
     } catch (_error) {
       setUser({
-        uid: 0,
-        token: "",
+        uid: 596492374,
+        token: "A10A404028FF394C0AB8A1E7805A129AF7",
       });
 
       console.error("Can't get userInfo by window.phone.getUserInfo");
@@ -138,6 +138,9 @@ function EventProvider({ children }) {
           beansReceived: beansReceived.data,
           dailyScoreToday: dailyScoreToday.data,
           dailyScorePrevious: dailyScorePrevious.data,
+          isLive,
+          buttonDisabled,
+          setButtonDisabled,
         }}
       >
         {children}

@@ -5,109 +5,123 @@ import { callingApi, cross, overFlowAuto, overFlowHidden, rewardImages, success,
 import { ApiContext } from "../../services/Api";
 import { baserUrl } from "../../js/baserUrl";
 function FireWorkGame() {
-  const [speed, setSpeed] = useState(1);
+  const { refreshApi, userId, userToken, buttonDisabled, setButtonDisabled } = useContext(ApiContext);
+  const [speed, setSpeed] = useState(0);
   const [alert, setAlert] = useState(false);
   const [popup, setPopup] = useState([]);
   const [oops, setOops] = useState(false);
-  const [buttonDisabled, setButtonDisabled] = useState(false);
-  const { refreshApi, userId, userToken } = useContext(ApiContext);
   const [animation, setanimation] = useState(false);
 
   const selectSpeed = (speed) => {
     setSpeed(speed);
   };
-
   const fireTheCracker = () => {
     setButtonDisabled(true);
-    callingApi(`${baserUrl}api/activity/independence/pak/talentFireworks?playCount=${speed}`, userId, userToken)
-      .then(function (response) {
-        if (response.msg === "success") {
-          setanimation(true);
-          setTimeout(() => {
+    if (!speed) {
+      setOops(true);
+      setAlert(true);
+      setPopup(
+        unsuccess(
+          <div className="d-flex fd-column jc-center al-center gap-2">
+            <div className="head-text f-chewy p-abs">Select Combo!</div>
+            <div>You need to select a combo first in order to play.</div>
+          </div>
+        )
+      );
+      overFlowHidden();
+    } else {
+      callingApi(`${baserUrl}api/activity/independence/pak/talentFireworks?playCount=${speed}`, userId, userToken)
+        .then(function (response) {
+          if (response.msg === "success") {
+            setanimation(true);
+            setTimeout(() => {
+              setAlert(true);
+              setPopup(
+                success(
+                  <div className="d-flex fd-column jc-center al-center gap-2">
+                    <div className="head-text f-chewy p-abs">Congratulations!</div>
+                    <span>You have successfully fired up the crackers & have won</span>
+                    <div
+                      className={
+                        response?.data?.rewardList.length > 6
+                          ? "rews-box rews-box-max d-flex al-start jc-center"
+                          : "rews-box d-flex al-start jc-center"
+                      }
+                    >
+                      {response?.data?.rewardList.map((item, index) => {
+                        return (
+                          <div className="d-flex al-center jc-center fd-column gap-1" key={index} style={{ width: "30%" }}>
+                            <div className="reward-img d-flex al-center jc-center">
+                              <img src={rewardImages(item?.desc)} alt="" />
+                            </div>
+                            <div className="name f-bold">
+                              <div>{item.desc}</div>x{" "}
+                              {item?.desc == "Beans" || item?.desc == "Gems" ? (
+                                item?.count
+                              ) : (
+                                <>
+                                  {item.count} {item.count === 1 ? "day" : "days"}
+                                </>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )
+              );
+              overFlowHidden();
+              setOops(false);
+              refreshApi();
+            }, 3000);
+          } else if (response.msg === "GAME_POINT_NOT_ENOUGH") {
+            setOops(true);
             setAlert(true);
             setPopup(
-              success(
+              unsuccess(
                 <div className="d-flex fd-column jc-center al-center gap-2">
-                  <div className="head-text f-chewy p-abs">Congratulations!</div>
-                  <span>You have successfully fired up the crackers & have won & have won</span>
-                  <div
-                    className={
-                      response?.data?.rewardList.length > 6 ? "rews-box rews-box-max d-flex al-start jc-center" : "rews-box d-flex al-start jc-center"
-                    }
-                  >
-                    {response?.data?.rewardList.map((item, index) => {
-                      return (
-                        <div className="d-flex al-center jc-center fd-column gap-1" key={index} style={{ width: "30%" }}>
-                          <div className="reward-img d-flex al-center jc-center">
-                            <img src={rewardImages(item?.desc)} alt="" />
-                          </div>
-                          <div className="name f-bold">
-                            <div>{item.desc}</div>x{" "}
-                            {item?.desc == "Beans" || item?.desc == "Gems" ? (
-                              item?.count
-                            ) : (
-                              <>
-                                {item.count} {item.count === 1 ? "day" : "days"}
-                              </>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                  <div className="head-text f-chewy p-abs">Oops!</div>
+                  <div>You don’t have enough talent points right now, get more event gifts to get talent points and come back again.</div>
                 </div>
               )
             );
             overFlowHidden();
-            setOops(false);
-            refreshApi();
-          }, 3000);
-        } else if (response.msg === "GAME_POINT_NOT_ENOUGH") {
+          } else {
+            setOops(true);
+            setAlert(true);
+            setPopup(
+              unsuccess(
+                <div className="d-flex fd-column jc-center al-center gap-2">
+                  <div className="head-text f-chewy p-abs">Oops!</div>
+                  <div>{response.msg}</div>
+                </div>
+              )
+            );
+            overFlowHidden();
+          }
+        })
+        .catch(function (error) {
           setOops(true);
           setAlert(true);
           setPopup(
             unsuccess(
               <div className="d-flex fd-column jc-center al-center gap-2">
                 <div className="head-text f-chewy p-abs">Oops!</div>
-                <div>You don’t have enough talent points right now, get more event gifts to get talent points and come back again.</div>
+                <div>{error.message}</div>
               </div>
             )
           );
           overFlowHidden();
-        } else {
-          setOops(true);
-          setAlert(true);
-          setPopup(
-            unsuccess(
-              <div className="d-flex fd-column jc-center al-center gap-2">
-                <div className="head-text f-chewy p-abs">Oops!</div>
-                <div>{response.msg}</div>
-              </div>
-            )
-          );
-          overFlowHidden();
-        }
-      })
-      .catch(function (error) {
-        setOops(true);
-        setAlert(true);
-        setPopup(
-          unsuccess(
-            <div className="d-flex fd-column jc-center al-center gap-2">
-              <div className="head-text f-chewy p-abs">Oops!</div>
-              <div>{error.message}</div>
-            </div>
-          )
-        );
-        overFlowHidden();
-      });
+        });
+    }
   };
   const close = () => {
     overFlowAuto();
     setAlert(false);
     setButtonDisabled(false);
     setOops(false);
-    setSpeed(1);
+    setSpeed(0);
     setanimation(false);
   };
   return (
@@ -115,15 +129,12 @@ function FireWorkGame() {
       <div className="firework-game m-auto d-flex fd-column al-center f-tangoItalic gap-2">
         <div className="firework-game-area d-flex al-center jc-center p-rel">
           <img className="effect p-abs" style={animation ? { display: "block" } : { display: "none" }} src={firecrackerEffect} alt="" />
-          <div className="mascot d-flex p-abs">
+          <div className="mascot d-flex p-rel jc-s-between al-end">
             <img src={baloons} alt="" />
+            <img src={firecrackers1} alt="" />
             <img src={mascot1} alt="" />
-            <img src={Mascot2} alt="" />
+            <img src={firecrackers2} alt="" />
             <img src={baloons} alt="" />
-            <div className="firecrackers p-abs">
-              <img src={firecrackers1} alt="" />
-              <img src={firecrackers2} alt="" />
-            </div>
           </div>
         </div>
         <div className="firework-game-bottom d-flex al-center jc-center">

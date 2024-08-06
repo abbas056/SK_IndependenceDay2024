@@ -3,7 +3,7 @@ import SliderItems from "./rewards-slider/SliderItems";
 import title from "../assets/Reward-title.png";
 import beanPot from "../assets/Beans-Pot.png";
 import beanIcon from "../assets/bean.png";
-function Tab1Rewards({ overallBeans }) {
+function Tab1Rewards({ dailyBeans }) {
   return (
     <div className="rewards-box p-rel m-auto d-flex al-center jc-center f-tangoItalic">
       <img className="title p-abs" src={title} alt="" />
@@ -14,7 +14,7 @@ function Tab1Rewards({ overallBeans }) {
         </div>
         <div className="bean-num d-flex al-center jc-center">
           <img src={beanIcon} alt="" />
-          <span style={{ color: "white" }}>{overallBeans ? overallBeans : 0}</span>
+          <span style={{ color: "white" }}>{dailyBeans ? dailyBeans : 0}</span>
         </div>
       </div>
       <div className="rewards">

@@ -1,3 +1,15 @@
+#extraContent {
+  height: 0vw;
+  width: 0vw;
+  position: absolute;
+  z-index: -99;
+  background: url("./assets/GameAssets/Tab1GameAssets/animations/1.gif"), url("./assets/GameAssets/Tab1GameAssets/animations/2.gif"),
+    url("./assets/GameAssets/Tab1GameAssets/animations/3.gif"), url("./assets/GameAssets/Tab2GameAssets/animation/Building-Effect.gif"),
+    url("./assets/GameAssets/Tab3GameAssets/animation/Firecracker-Game.gif"), url("./assets/GameAssets/Tab2GameAssets/animation/Mascot-Builder-L.gif"),
+    url("./assets/GameAssets/Tab2GameAssets/animation/Mascot-Builder-R.gif");
+  opacity: 0;
+  top: 0px;
+}
 .App {
   text-align: center;
   background-image: url(./assets/Bg.png);
@@ -36,7 +48,8 @@
 
   // }
   .baloons {
-    margin-top: -12vw;
+    width: 100%;
+    margin-top: -10vw;
     z-index: 1;
     position: relative;
   }
@@ -50,37 +63,41 @@
   right: 2vw;
   top: 0;
   margin: 0 auto;
-  color: white;
   z-index: 2;
   .selected-language {
-    background-color: #994f04;
-    font-family: tangoSans;
+    background-color: #d76700;
+    font-family: monospace;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 3.5vw;
+    font-size: 2.8vw;
     color: white;
-    border-radius: 2vw;
+    border-radius: 5vw;
     margin-top: 2vw;
     display: flex;
     padding-left: 2vw;
     justify-content: space-between;
     align-items: center;
+    border: 1.5px solid #19480e !important;
     img {
-      width: 4vw;
+      width: 3vw;
       margin-left: 1vw;
-      background-color: #0c58a9;
+      background-color: #fcc437;
       padding: 1vw;
-      border-radius: 0 2vw 2vw 0;
+      border-radius: 0 5vw 5vw 0;
     }
   }
   .language-list {
-    background-color: #0c58a9;
+    background-color: #fcc437;
     overflow: hidden;
     border-radius: 2vw;
     font-size: 3vw;
     padding: 1vw 0;
   }
   .language-option {
+    font-family: monospace;
     cursor: pointer;
+    font-weight: bold;
+    color: #19480e;
     &:hover {
       background-color: #ccc;
     }
@@ -112,8 +129,8 @@
     box-sizing: border-box;
     display: block;
     position: absolute;
-    width: 10vw;
-    height: 10vw;
+    width: 7vw;
+    height: 7vw;
     margin: 8px;
     border: 3px solid #fff;
     border-radius: 50%;
@@ -139,7 +156,7 @@
       height: 15vw;
       left: 0;
       top: 80vw;
-      z-index: 2;
+      z-index: 3;
       color: white;
       font-size: 3vw;
       padding-right: 3vw;
@@ -151,7 +168,7 @@
       height: 15vw;
       right: 0;
       top: 80vw;
-      z-index: 2;
+      z-index: 3;
       color: white;
       font-size: 3vw;
       padding-left: 2vw;
@@ -304,20 +321,16 @@
         }
       }
       .table-data::-webkit-scrollbar {
-        background-color: #ffffff;
+        background-color: #e37820;
         background-size: 100% 100%;
-        width: 0.1vw;
+        width: 1vw;
       }
       .table-data::-webkit-scrollbar-track {
-        background-color: white;
+        background-color: #06531c;
         border-radius: 10px;
       }
       .table-data::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background-color: #751a20;
-        background-size: 100% 100%;
-        width: 5vw;
-        height: 5vw;
+        background-color: #e37820;
       }
       .rews {
         .rew-img {
@@ -335,14 +348,17 @@
     .see-btn {
       background-color: green;
       width: 20vw;
+      height: 4vw;
       margin: auto;
       padding: 2vw;
       margin-top: 2vw;
       border: 1.5px solid #ffac2f;
       border-radius: 5vw;
       button {
+        width: 100%;
         color: white;
         margin: 0 auto;
+        height: 100%;
         img {
           width: 20vw;
         }
@@ -407,16 +423,22 @@
   background-image: url(./assets/Game-Section-Base.png);
   background-size: 100% 100%;
   width: 95%;
-  padding: 3vw 2vw;
+  padding: 3vw 2vw 7vw 2vw;
   &-battleField {
     background-image: url(./assets/GameAssets/Tab1GameAssets/Battlefield.png);
     background-size: 100% 100%;
     width: 100%;
     height: 110vw;
     color: white;
+    perspective: 100vw;
     .animation {
       z-index: 2;
       width: 97%;
+    }
+    .firework-animation {
+      width: 90%;
+      height: 90vw;
+      top: 5vw;
     }
     .soldiers {
       width: 50%;
@@ -429,6 +451,35 @@
       right: 36vw;
       top: 52vw;
       width: 12vw;
+      animation: handAnimation 2s infinite alternate;
+    }
+    // .grid {
+    //   width: 70%;
+    //   height: 90vw;
+    //   background: #000;
+    //   clip-path: polygon(15% 0%, 88% 0%, 100% 100%, 0% 100%);
+    //   top: 31vw;
+    //   display: grid;
+    //   grid-template-columns: repeat(5, 1fr);
+    //   grid-template-rows: repeat(5, 1fr);
+    //   transform: rotate3d(1, 0, 0, 50deg);
+    //   img {
+    //     position: absolute;
+    //     // transform: rotate3d(1, 0, 0, 50deg);
+    //   }
+    .grid {
+      width: 61%;
+      height: 62vw;
+      margin-top: -3vw;
+      margin-right: -1vw;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      transform: rotate3d(1, 0, 0, 39deg) rotateZ(2deg) rotateY(-4deg);
+      .active {
+        background: center/100% 100% url(./assets/GameAssets/Tab1GameAssets/1-Box.png);
+        border-radius: 2vw;
+      }
     }
     .canon {
       bottom: 0;
@@ -459,9 +510,14 @@
         width: 70%;
         height: 6vw;
         padding: 0 1vw;
-        img {
+        .bar-outer {
+          width: 100%;
           height: 3.5vw;
-          border-radius: 5vw 0 0 5vw;
+          border-radius: 5vw;
+          overflow: hidden;
+          img {
+            height: 100%;
+          }
         }
         .count {
           left: 0;
@@ -497,7 +553,7 @@
             background-size: 100% 100%;
             background-color: transparent;
             border: none;
-            width: 5vw;
+            width: 6vw;
             height: 5vw;
             font-size: 3vw;
             font-weight: bold;
@@ -530,15 +586,15 @@
   .score-counter {
     background-image: url(./assets/Daily-Enemies-Defeated-Base.png);
     background-size: 100% 100%;
-    width: 55%;
-    height: 8vw;
-    font-size: 2vw;
+    width: 65%;
+    height: 12vw;
+    font-size: 3vw;
     padding-bottom: 2vw;
     color: #124e1c;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-weight: bold !important;
     img {
-      width: 5vw;
+      width: 8vw;
     }
   }
 }
@@ -808,11 +864,12 @@
           margin: 0 auto;
           height: 40vw;
           overflow-y: scroll;
+          line-height: 4vw;
           ol {
             padding: 0 0 0 4vw;
           }
           ul {
-            padding: 0 0 0 4vw;
+            padding: 0 2vw 0 4vw;
           }
           .table {
             font-size: 3vw;
@@ -902,9 +959,12 @@
             width: 100%;
             font-weight: bold;
             .rank {
-              font-size: 2.8vw;
-              top: -19vw;
+              top: -3vw;
               color: white;
+              z-index: 2;
+              img {
+                width: 8vw;
+              }
             }
             .bottom-data {
               background-image: url(./assets/top-user-Base.png);
@@ -924,7 +984,6 @@
               .username {
                 font-size: 2.8vw;
                 text-align: center;
-                overflow: hidden;
                 white-space: nowrap;
               }
               .level-img {
@@ -1031,13 +1090,11 @@
             top: 3vw;
           }
           .user-info {
-            overflow: hidden;
             display: flex;
             text-align: left;
             .username {
               font-size: 3.2vw;
               font-weight: 700;
-              width: 22vw;
             }
           }
           .est-rew {
@@ -1152,15 +1209,16 @@
     height: 100vw;
     color: white;
     .estimated-rewards {
-      top: 12vw;
+      top: 9vw;
       right: 7vw;
       .rewards {
         background-image: url(./assets/GameAssets/Tab2GameAssets/estimated-rewards-Base.png);
         background-size: 100% 100%;
-        width: 18vw;
-        height: 6vw;
-        font-size: 2.5vw;
-        color: #1d470b;
+        width: 30vw;
+        height: 7vw;
+        font-size: 2.3vw;
+        color: white;
+        padding: 1vw;
       }
       img {
         width: 12vw;
@@ -1175,6 +1233,30 @@
       width: 70%;
       z-index: 1;
       left: 10vw;
+    }
+    .mascot {
+      width: 70%;
+      z-index: 1;
+      img {
+        &:nth-child(1) {
+          left: 17vw;
+          z-index: 1;
+          bottom: 24vw;
+          width: 12vw;
+        }
+        &:nth-child(2) {
+          left: 30vw;
+          z-index: 1;
+          bottom: 20vw;
+          width: 12vw;
+        }
+        &:nth-child(3) {
+          right: 33vw;
+          z-index: 1;
+          bottom: 22vw;
+          width: 12vw;
+        }
+      }
     }
     .building {
       width: 50vw;
@@ -1198,9 +1280,14 @@
       width: 90%;
       height: 9vw;
       padding: 0 1.5vw;
-      img {
-        border-radius: 5vw;
+      .bar-outer {
+        width: 100%;
         height: 6.5vw;
+        border-radius: 5vw;
+        overflow: hidden;
+        img {
+          height: 100%;
+        }
       }
       &-points {
         top: 2.5vw;
@@ -1282,34 +1369,31 @@
       margin: 0 auto;
     }
     .mascot {
-      bottom: 3vw;
+      width: 90%;
+      bottom: -19vw;
       img {
         &:first-child {
-          width: 20vw;
-          width: 20vw;
-          margin-right: -8vw;
-        }
-        &:nth-child(4) {
-          width: 20vw;
+          width: 18vw;
           height: 35vw;
-          margin-left: -8vw;
+          margin-left: 2vw;
         }
-        &:nth-child(2),
-        &:nth-child(3) {
-          z-index: 1;
-          width: 30vw;
-          height: 40vw;
-        }
-      }
-      .firecrackers {
-        right: 6vw;
-        bottom: -2vw;
-        display: flex;
-        width: 50%;
-        justify-content: space-between;
-        img {
+        &:nth-child(2) {
           width: 13vw;
           height: 13vw;
+        }
+        &:nth-child(3) {
+          z-index: 1;
+          width: 32vw;
+          height: 45vw;
+        }
+        &:nth-child(4) {
+          width: 13vw;
+          height: 13vw;
+          margin-right: -8vw;
+        }
+        &:nth-child(5) {
+          width: 20vw;
+          height: 35vw;
         }
       }
     }
@@ -1358,13 +1442,12 @@
         color: #075b23;
         font-size: 3.5vw;
         width: 90%;
-        font-weight: bold;
         .head-text {
           background-image: url(./assets/Popups/game-popups/Title-base.png);
           background-size: 100% 100%;
           width: 90%;
-          padding-top: 7vw;
-          height: 16vw;
+          padding-top: 9vw;
+          height: 17vw;
           font-size: 9vw;
           left: 0;
           right: 0;
@@ -1373,6 +1456,9 @@
           margin: 0 auto;
           color: white;
           font-family: hunter;
+        }
+        span {
+          font-weight: bold;
         }
         .rews-box {
           width: 100%;
@@ -1539,6 +1625,7 @@
               width: 85%;
               height: 100%;
               .rank {
+                height: 10vw;
                 top: 4vw;
                 font-size: 3vw;
               }
@@ -1608,12 +1695,16 @@
   margin: 0;
 }
 .btn-up {
-  width: 14vw;
+  width: 9vw;
+  height: 9vw;
   position: fixed;
-  bottom: 15vw;
-  right: 4vw;
+  bottom: 5vw;
+  right: 2vw;
   cursor: pointer;
   z-index: 3;
+  img {
+    width: 100%;
+  }
 }
 .footer {
   width: 100%;
@@ -1655,6 +1746,77 @@
       right: 3vw;
       img {
         width: 100%;
+      }
+    }
+  }
+}
+.marque-container {
+  overflow: hidden;
+  width: 100%;
+  height: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10vw 0 -7vw 0;
+  .marquee-alternative {
+    margin: auto;
+    margin-left: 3vw;
+    height: 17vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .taxts {
+      background: linear-gradient(180deg, rgba(121, 255, 228, 1) 0%, rgba(10, 188, 152, 1) 100%);
+      height: 8vw;
+      color: #14410b;
+      border-top: 0.6vw solid #f5b513;
+      border-bottom: 0.6vw solid #ffe258;
+
+      font-size: 2.5vw;
+      margin-right: 8vw;
+      padding: 0 2vw 0 2vw;
+      &::before {
+        content: "";
+        background: center/contain no-repeat url(./assets/Ticker-tape-Base.png);
+        width: 6vw;
+        height: 9.6vw;
+        position: absolute;
+        right: -5.5vw;
+        top: 48%;
+        transform: translateY(-50%);
+      }
+      .border-img {
+        width: 12vw;
+        height: 14vw;
+        z-index: 1;
+        left: -3vw;
+      }
+      .user-img {
+        width: 11vw;
+        height: 10vw;
+        left: -2.5vw;
+        top: -1vw;
+        border-radius: 50%;
+      }
+      .text {
+        .content {
+          margin-left: 7vw;
+          img {
+            width: 7vw;
+          }
+          .nick-name {
+            text-align: initial;
+            margin-right: 1vw;
+          }
+          .icon {
+            margin: 0 1vw;
+            width: 5vw;
+          }
+        }
+      }
+      span {
+        color: #fff300;
+        margin-left: 1vw;
       }
     }
   }

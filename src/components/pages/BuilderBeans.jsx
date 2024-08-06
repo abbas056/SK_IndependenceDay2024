@@ -15,7 +15,8 @@ function BuilderBeans({ tab2 }) {
   let gamePoints = userInfo?.gamePoints;
   let currentLevel = userInfo?.currentLevel;
   let dailyConstructionPoints = userInfo?.dailyConstructionPoints;
-  let accumulateEarn = userInfo?.accumulateEarn;
+  let dailyAccumulateEarn = userInfo?.dailyAccumulateEarn;
+  let totalAccumulateEarn = userInfo?.totalAccumulateEarn;
   let expectBeans = userInfo?.expectBeans;
 
   const infoPopup = () => {
@@ -34,7 +35,8 @@ function BuilderBeans({ tab2 }) {
         gamePoints={gamePoints}
         currentLevel={currentLevel}
         dailyConstructionPoints={dailyConstructionPoints ? dailyConstructionPoints : 0}
-        accumulateEarn={accumulateEarn}
+        dailyAccumulateEarn={dailyAccumulateEarn}
+        totalAccumulateEarn={totalAccumulateEarn}
         expectBeans={expectBeans}
         infoPopup={infoPopup}
       />

@@ -13,7 +13,7 @@ function MyPoints({ text, icon, points, tab3 }) {
     >
       <img src={icon} alt="" />
       <span>
-        {text}: {points ? points : 0}
+        {text} {points ? points : 0}
       </span>
     </div>
   );

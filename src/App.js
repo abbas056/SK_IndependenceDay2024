@@ -14,6 +14,7 @@ import axios from "axios";
 import Header from "./assets/Header.svga";
 import "./App.scss";
 import Svga from "./components/Svga";
+import Marque from "./components/Marquee";
 
 function App() {
   const headerRef = useRef(0);
@@ -33,7 +34,7 @@ function App() {
     details: false,
     records: false,
   });
-  const { userId } = useContext(ApiContext);
+  const { userId, userInfo } = useContext(ApiContext);
   const [showBtnUp, setShowBtnUp] = useState(false);
 
   let type;
@@ -53,21 +54,7 @@ function App() {
       records: false,
     };
     setPopup({ ...newCat, [id]: true });
-    gameRecord();
     overFlowHidden();
-  };
-
-  const gameRecord = () => {
-    setIsLoading(true);
-    axios
-      .get(
-        `${baserUrl}api/activity/eidF/getRecordInfo?eventDesc=20240812_pak&rankIndex=21&pageNum=${loadMore}&pageSize=20&type=${type}&userId=${userId}`
-      )
-      .then((response) => {
-        setgameRecords(response?.data);
-        setIsLoading(false);
-      })
-      .catch((err) => console.log(err));
   };
 
   const loadMoreHistory = () => {
@@ -75,8 +62,21 @@ function App() {
   };
 
   useEffect(() => {
-    gameRecord();
-  }, [loadMore]);
+    setIsLoading(true);
+    axios
+      .get(
+        `${baserUrl}api/activity/eidF/getRecordInfo?eventDesc=20240812_pak&rankIndex=21&pageNum=${loadMore}&pageSize=20&type=${type}&userId=${userId}`
+      )
+      .then((response) => {
+        if (loadMore >= 2) {
+          setgameRecords((prev) => [...prev, response?.data?.data?.list]);
+        } else {
+          setgameRecords([response?.data?.data?.list]);
+        }
+        setIsLoading(false);
+      })
+      .catch((err) => console.log(err));
+  }, [userInfo, loadMore, userId]);
 
   const close = () => {
     setPopup(false);
@@ -104,11 +104,11 @@ function App() {
       <div className="App">
         <div className="header">
           <Svga src={Header} playerRef={headerRef} id="headerRef" cssClass={`header-svga`} />
-
           {/* <img src={Header} alt="" /> */}
           <img className="baloons" src={balloons} alt="" />
         </div>
         <LanguageBar language={language} setLanguage={setLanguage} />
+        {mainTabs.tab1 ? <Marque /> : null}
         <MainTabButtons mainTabs={mainTabs} setMainTabs={setMainTabs} />
         <PopupBtns mainTabs={mainTabs} popupSwitch={popupSwitch} />
         <Popups

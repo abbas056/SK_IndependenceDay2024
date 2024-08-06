@@ -25,11 +25,7 @@ export const tab1Rewards = [
 export const giftingTalnetrewards = [
   {
     id: 1,
-    target: (
-      <>
-        Talent <br /> Target: 80m
-      </>
-    ),
+    target: <>Target: 80m</>,
     frame: [
       {
         pic: `${baserUrl}streamkar/rewards/gems.png`,
@@ -59,11 +55,7 @@ export const giftingTalnetrewards = [
   },
   {
     id: 2,
-    target: (
-      <>
-        Talent <br /> Target: 70m
-      </>
-    ),
+    target: <>Target: 70m</>,
     frame: [
       {
         pic: `${baserUrl}streamkar/rewards/gems.png`,
@@ -93,11 +85,7 @@ export const giftingTalnetrewards = [
   },
   {
     id: 3,
-    target: (
-      <>
-        Talent <br /> Target: 50m
-      </>
-    ),
+    target: <>Target: 50m</>,
     frame: [
       {
         pic: `${baserUrl}streamkar/rewards/gems.png`,
@@ -203,7 +191,7 @@ export const giftingGifterrewards = [
         pic: `${baserUrl}streamkar/rewards/warHeroFrame.png`,
         desc: (
           <span>
-            <span>War Hero frame (New) x1 days</span>
+            <span>War Hero frame (New) x1 day</span>
           </span>
         ),
       },
@@ -211,7 +199,7 @@ export const giftingGifterrewards = [
         pic: `${baserUrl}streamkar/rewards/warHeroRoomSkin.png`,
         desc: (
           <span>
-            <span>War Hero room skin (New) x1 days</span>
+            <span>War Hero room skin (New) x1 day</span>
           </span>
         ),
       },
@@ -221,7 +209,7 @@ export const giftingGifterrewards = [
 export const eventGifts = [
   {
     id: 1,
-    img: `${baserUrl}streamkar/gifts/jashneazadi-gift.png`,
+    img: `${baserUrl}streamkar/gifts/40011725.png`,
     name: "Jashan e Azadi",
     cost: "40k",
   },
@@ -239,7 +227,7 @@ export const eventGifts = [
   },
   {
     id: 4,
-    img: `${baserUrl}streamkar/gifts/40001330.png`,
+    img: `${baserUrl}streamkar/gifts/baja.png`,
     name: "Baaja",
     cost: "10k",
   },
@@ -437,7 +425,7 @@ export const tab2Details = {
         },
         {
           pic: `${baserUrl}streamkar/rewards/beanbag.png`,
-          text: "2000 Beans",
+          text: "1000 Beans",
         },
       ],
     },
@@ -507,10 +495,14 @@ export var guideContent = {
         <div>With these points, you will be able to play this event.</div>
       </>
     ),
-    firstBox: (
-      <ul>
+    firstBox1: (
+      <ol>
         <li>In this part of the event, you can battle with enemies by deploying different kinds of mines on the battlefield.</li>
         <li>Each “Mine” has a different coverage area & acquires a different number of Jashan Points & has a different success percentage.</li>
+      </ol>
+    ),
+    firstBox2: (
+      <ol>
         <li>Only 1 type of mine can be selected at a time.</li>
         <li className="c-yellow">
           You can enter any value for the number of times you want to play in the text input box. The default value of the text input box is “1” &
@@ -542,10 +534,10 @@ export var guideContent = {
           0.5% of the beans spent on event gifts will be collected in the BEANS POT and collected Beans will be distributed among the top 3 Rankers of
           the leaderboard, each day.
         </li>
-      </ul>
+      </ol>
     ),
     secondBox: (
-      <ul>
+      <ol>
         <li>In this part of the event, you can construct a building to 6 different construction levels.</li>
         <li>Each level acquires different number of “Construction Points” to be reached.</li>
         <li className="c-yellow">1-time successful tap on the “Build” button = 20K Jashan Points.</li>
@@ -581,10 +573,10 @@ export var guideContent = {
         <li>“My Accumulated Earnings” counter will display your actual bean earnings produced throughout the event.</li>
         <li>The building upgrade progress will reset daily at 00:00:00 GMT.</li>
         <li>The generated beans income will be sent to the user account at 24:00:00 GMT every day.</li>
-      </ul>
+      </ol>
     ),
     thirdBox: (
-      <ul>
+      <ol>
         <li>This part of the event is for talents only.</li>
         <li>By receiving event gifts, you will get Talent Points.</li>
         <li className="c-yellow">1 Gem of event gift received = 1 Talent Point.</li>
@@ -592,7 +584,7 @@ export var guideContent = {
         <li className="c-yellow">1-time successful tap on “Fire” button = 30K Talent Points.</li>
         <li>You have to select any 1 of the combos first, then tap on the “Fire” button.</li>
         <li className="c-yellow">When you tap on the “Fire” button successfully, talent points will be deducted and you will get a reward.</li>
-      </ul>
+      </ol>
     ),
     h1: <h1 className="h1">For Users</h1>,
     desc1: (
@@ -622,10 +614,14 @@ export var guideContent = {
         <div>In points k sath, aap yeh event khel sakein gy.</div>
       </>
     ),
-    firstBox: (
-      <ul>
+    firstBox1: (
+      <ol>
         <li>Event k is hissay mein, aap battlefield mein mukhtalif qisam ki mines istamal karke enemies sy lar sakty hain.</li>
         <li>Har "Mine" ka mukhtalif coverage area hai, mukhtalif Jashan Points hain aur success ki mukhtalif percentage hai.</li>
+      </ol>
+    ),
+    firstBox2: (
+      <ol>
         <li>Ek waqt mein sirf ek qisam ki mine select ki ja sakti hai.</li>
         <li className="c-yellow">
           Aap jitni bar play karna chahty hai text input box main value daal sakty hain. Text input box ki default value "1" aur maximum value "999"
@@ -654,10 +650,10 @@ export var guideContent = {
           Event gifts par kharch hone wale beans ka 0.5% beans pot mein collect hoga aur collect kiye gaye Beans ko leaderboard k top 3 rankers k
           beech har roz distribute kiya jaye ga.
         </li>
-      </ul>
+      </ol>
     ),
     secondBox: (
-      <ul>
+      <ol>
         <li>Event k is hissay mein, aap 6 mukhtalif construction levels tak building construct kar sakty hain.</li>
         <li>Har level ko mukhtalif number mein “Construction Points” chahiye hai.</li>
         <li className="c-yellow">“Build" button par aik bar successful tap = 20k Jashan Points.</li>
@@ -694,10 +690,10 @@ export var guideContent = {
         <li>“My Accumulated Earnings” counter aapk mukammal event k dauran haasil kiye gaye beans earnings display karey ga.</li>
         <li>Building upgrade progress har roz 00:00:00 GMT par reset hogi.</li>
         <li>Generated beans ki income rozana 24:00:00 GMT par user account mein bhej di jaye gi.</li>
-      </ul>
+      </ol>
     ),
     thirdBox: (
-      <ul>
+      <ol>
         <li>Event ka yeh hissa sirf talents k liye hai.</li>
         <li>Event gifts receive karne sy apko talent points milein gy.</li>
         <li className="c-yellow">1 Gem of event gift received = 1 Talent Point.</li>
@@ -705,7 +701,7 @@ export var guideContent = {
         <li className="c-yellow">“Fire" button par aik bar successful tap = 30K Talent Points.</li>
         <li>Aapko phele kisi bhi 1 combo ko select karke phir "Fire" button par tap karna hoga.</li>
         <li className="c-yellow">Jab aap "Fire" button par kamiyabi sy tap karen gy, toh talent points kaat jayen gy aur aapko reward miley ga.</li>
-      </ul>
+      </ol>
     ),
     h1: <h1 className="h1">For Users</h1>,
     desc1: (

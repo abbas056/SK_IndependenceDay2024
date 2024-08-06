@@ -58,40 +58,46 @@ function DetailsPopup({ close, mainTabs }) {
               </thead>
               <tbody className="w-100">
                 <tr className="w-100">
+                  <td className="w-25 border-b">LV 0</td>
+                  <td className="w-25 border-b">50</td>
+                  <td className="w-25 border-b">-</td>
+                  <td className="w-25 border-b">-</td>
+                </tr>
+                <tr className="w-100">
                   <td className="w-25 border-b">LV 1</td>
                   <td className="w-25 border-b">50</td>
-                  <td className="w-25 border-b">0</td>
-                  <td className="w-25 border-b">0</td>
+                  <td className="w-25 border-b">No Beans Produced</td>
+                  <td className="w-25 border-b">/</td>
                 </tr>
                 <tr className="w-100">
                   <td className="w-25 border-b">LV 2</td>
                   <td className="w-25 border-b">100</td>
-                  <td className="w-25 border-b">0</td>
-                  <td className="w-25 border-b">0</td>
+                  <td className="w-25 border-b">No Beans Produced</td>
+                  <td className="w-25 border-b">/</td>
                 </tr>
                 <tr className="w-100">
                   <td className="w-25 border-b">LV 3</td>
-                  <td className="w-25 border-b">200</td>
+                  <td className="w-25 border-b">100</td>
                   <td className="w-25 border-b">40</td>
                   <td className="w-25 border-b">2400</td>
                 </tr>
                 <tr className="w-100">
                   <td className="w-25 border-b">LV 4</td>
-                  <td className="w-25 border-b">300</td>
+                  <td className="w-25 border-b">200</td>
                   <td className="w-25 border-b">70</td>
                   <td className="w-25 border-b">4200</td>
                 </tr>
                 <tr className="w-100">
                   <td className="w-25 border-b">LV 5</td>
-                  <td className="w-25 border-b">500</td>
+                  <td className="w-25 border-b">300</td>
                   <td className="w-25 border-b">120</td>
                   <td className="w-25 border-b">7200</td>
                 </tr>
                 <tr className="w-100">
                   <td className="w-25 border-b">LV 6</td>
-                  <td className="w-25 border-b">800</td>
+                  <td className="w-25 border-b">no limit</td>
                   <td className="w-25 border-b">200</td>
-                  <td className="w-25 border-b">No Limit Beans = Construction Points x15</td>
+                  <td className="w-25 border-b">No Limit Beans = Construction Points x1500%</td>
                 </tr>
               </tbody>
             </table>

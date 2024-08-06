@@ -7,6 +7,7 @@ import LeaderBoard from "../leaderboard/LeaderBoad";
 import { ApiContext } from "../../services/Api";
 import { nowDate, PrevDate, slicePlease } from "../../js/helpers";
 import title from "../../assets/Leaderboard-title.png";
+import Marque from "../Marquee";
 
 function BattleField({ tab1 }) {
   const { userInfo, dailyScoreToday, dailyScorePrevious } = useContext(ApiContext);
@@ -17,11 +18,13 @@ function BattleField({ tab1 }) {
 
   let todayKey = `DAILY_USER_${nowDate}`;
   let prevKey = `DAILY_USER_${PrevDate}`;
+  let dailyBeans = userInfo?.beansPotInfo?.[todayKey];
   let overallBeans = userInfo?.beansPotInfo?.OVERALL_BEANS;
   let overallGems = userInfo?.beansPotInfo?.OVERALL_GEMS;
   let gamePoints = userInfo?.gamePoints;
   let dailyScores = userInfo?.dailyScores;
   let totalScores = userInfo?.totalScores;
+  let visitTimeDaily = userInfo?.visitTimeDaily;
 
   let beansPot;
   let winners;
@@ -39,8 +42,8 @@ function BattleField({ tab1 }) {
   return (
     <div>
       <MyPoints icon={pontsIcon} text="My Jashan Points: " points={gamePoints} />
-      <WarGame dailyScores={dailyScores} gamePoints={gamePoints} totalScores={totalScores ? totalScores : 0} />
-      <Tab1Rewards overallBeans={overallBeans} />
+      <WarGame dailyScores={dailyScores} gamePoints={gamePoints} totalScores={totalScores ? totalScores : 0} visitTimeDaily={visitTimeDaily} />
+      <Tab1Rewards dailyBeans={dailyBeans} />
       <LeaderBoard
         tab1={tab1}
         topWinners={topWinners}
